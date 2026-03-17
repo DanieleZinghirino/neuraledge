@@ -1,0 +1,2 @@
+/usr/bin/ar qc libneuraledge_core.a CMakeFiles/neuraledge_core.dir/src/sensor/Sensor.cpp.o CMakeFiles/neuraledge_core.dir/src/signal/TemperatureSignal.cpp.o CMakeFiles/neuraledge_core.dir/src/noise/GaussianNoise.cpp.o CMakeFiles/neuraledge_core.dir/src/fault/NoFault.cpp.o CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.o
+/usr/bin/ranlib libneuraledge_core.a

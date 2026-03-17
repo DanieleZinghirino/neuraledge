@@ -1,0 +1,24 @@
+#pragma once
+
+/**
+ * @brief Interfaccia astratta per un modello di segnale senza rumore (ideale).
+ *
+ * RESPONSABILITA:
+ * - modellare un fenomeno fisico
+ *
+ * ESEMPIO: 
+ * - temperatura
+ * - vibrazione sinusoidale
+ */
+class ISignalModel {
+    public:
+        virtual ~ISignalModel() = default;
+
+        /**
+         * @brief Genera un valore del segnale in un dato istante.
+         *
+         * @param t tempo generato.
+         * @return valore ideale del segnale (senza rumore).
+         */
+        virtual double generate(double t) = 0;
+};

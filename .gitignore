@@ -1,0 +1,14 @@
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Output dei grafici
+python_analytics/output/
+
+# C++ build
+cpp_core/build/
+*.o
+*.exe
