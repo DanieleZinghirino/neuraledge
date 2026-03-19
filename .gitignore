@@ -1,12 +1,12 @@
 # Python virtual environment
-venv/
+analyzer/venv/
 
 # Python cache
 __pycache__/
 *.pyc
 
 # Output dei grafici
-python_analytics/output/
+output/
 
 # C++ build
 cpp_core/build/

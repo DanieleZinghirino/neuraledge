@@ -3,13 +3,7 @@ import sys
 
 from csv_loader import load_csv
 from timeseries import pivot_timeseries, compute_derivative, compute_stats
-from plots import (
-    plot_timeseries_with_anomalies,
-    plot_distributions,
-    plot_correlation,
-    plot_derivative,
-    plot_time_heatmap
-)
+from plots import (plot_per_sensor)
 
 
 def resolve_workspace_root() -> Path:
@@ -42,7 +36,7 @@ def resolve_csv_path(workspace_root: Path) -> Path:
 
 
 def main():
-    print("=== NeuralEdge Analyzer ===")
+    print("     === NeuralEdge Analyzer ===")
 
     # =========================
     # 1. Path resolution
@@ -100,12 +94,7 @@ def main():
     # 6. Plot
     # =========================
     try:
-        plot_timeseries_with_anomalies(pivot_df)
-        plot_distributions(pivot_df)
-        plot_correlation(pivot_df)
-        plot_derivative(diff_df)
-        plot_time_heatmap(pivot_df)
-
+        plot_per_sensor(df)
     except Exception as e:
         print(f"[ERROR] Errore nei plot: {e}")
         sys.exit(1)

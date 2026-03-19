@@ -1,125 +1,140 @@
 from pathlib import Path
+import shutil
 import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
 
 
 def _get_output_dir() -> Path:
-    output_dir = Path(__file__).resolve().parents[2] / "output"
-    output_dir.mkdir(exist_ok=True)
-    return output_dir
+    output_dir = Path(__file__).resolve().parents[2] / "output/plots"
+    if output_dir.exists():
+        # Cancella tutti i file dentro la cartella
+        if output_dir.exists():
+            shutil.rmtree(output_dir)
+
+        output_dir.mkdir()
+
+        return output_dir
 
 
-# =========================
-# 1. TIME SERIES + ANOMALIE
-# =========================
-def plot_timeseries_with_anomalies(pivot_df):
+def plot_per_sensor(df):
     output_dir = _get_output_dir()
 
-    plt.figure(figsize=(14, 7))
+    sensors = df["sensor_id"].unique()
 
-    for col in pivot_df.columns:
-        series = pivot_df[col]
+    for sensor in sensors:
+        sensor_df = df[df["sensor_id"] == sensor].copy()
 
-        # Z-score per anomalie
-        z = (series - series.mean()) / series.std()
-        anomalies = series[np.abs(z) > 3]
+        # Ordinamento temporale
+        sensor_df = sensor_df.sort_values("timestamp")
 
-        plt.plot(series.index, series, label=col)
-        plt.scatter(anomalies.index, anomalies, marker="x", s=80)
+        # Rolling mean
+        sensor_df["rolling"] = sensor_df["value"].rolling(window=5).mean()
 
-    plt.title("Time Series + Anomalies (Z-score > 3)")
-    plt.legend()
-    plt.grid(True)
+        # Statistiche
+        mean_value = sensor_df["value"].mean()
+        std_value = sensor_df["value"].std()
 
-    out = output_dir / "timeseries_anomalies.png"
-    plt.savefig(out)
-    print(f"[INFO] {out}")
+        # Soglie anomalie
+        k = 2  # puoi mettere 3 per più rigore
+        upper_threshold = mean_value + k * std_value
+        lower_threshold = mean_value - k * std_value
 
-    plt.close()
+        # Selezione anomalie
+        high_anomalies = sensor_df[sensor_df["value"] > upper_threshold]
+        low_anomalies = sensor_df[sensor_df["value"] < lower_threshold]
 
+        plt.figure(figsize=(11, 5))
 
-# =========================
-# 2. DISTRIBUZIONE (BOXPLOT)
-# =========================
-def plot_distributions(pivot_df):
-    output_dir = _get_output_dir()
+        # Segnale reale
+        plt.plot(
+            sensor_df["timestamp"],
+            sensor_df["value"],
+            label="Raw",
+            color="green",
+            alpha=0.6
+        )
 
-    plt.figure(figsize=(10, 6))
-    pivot_df.boxplot()
+        # Trend
+        plt.plot(
+            sensor_df["timestamp"],
+            sensor_df["rolling"],
+            linestyle="--",
+            color="orange",
+            label="Trend"
+        )
 
-    plt.title("Distribuzione per sensore (Boxplot)")
-    plt.grid(True)
+        # Media
+        plt.axhline(
+            mean_value,
+            linestyle=":",
+            color="yellow",
+            label=f"Mean = {mean_value:.2f}"
+        )
 
-    out = output_dir / "distributions_boxplot.png"
-    plt.savefig(out)
-    print(f"[INFO] {out}")
+        # Bande di soglia
+        plt.axhline(
+            upper_threshold,
+            linestyle="--",
+            color="red",
+            alpha=0.5,
+            label="+2σ"
+        )
 
-    plt.close()
+        plt.axhline(
+            lower_threshold,
+            linestyle="--",
+            color="blue",
+            alpha=0.5,
+            label="-2σ"
+        )
 
+        # 🔴 Anomalie alte
+        plt.scatter(
+            high_anomalies["timestamp"],
+            high_anomalies["value"],
+            color="red",
+            s=60,
+            label="High anomaly"
+        )
 
-# =========================
-# 3. CORRELAZIONE
-# =========================
-def plot_correlation(pivot_df):
-    output_dir = _get_output_dir()
+        # 🔵 Anomalie basse
+        plt.scatter(
+            low_anomalies["timestamp"],
+            low_anomalies["value"],
+            color="cyan",
+            s=60,
+            label="Low anomaly"
+        )
 
-    corr = pivot_df.corr()
+        # Fill solo per anomalie (NON tutto sopra/sotto)
+        plt.fill_between(
+            sensor_df["timestamp"],
+            sensor_df["value"],
+            upper_threshold,
+            where=(sensor_df["value"] > upper_threshold),
+            color="red",
+            alpha=0.2
+        )
 
-    plt.figure(figsize=(8, 6))
-    plt.imshow(corr)
-    plt.colorbar()
+        plt.fill_between(
+            sensor_df["timestamp"],
+            sensor_df["value"],
+            lower_threshold,
+            where=(sensor_df["value"] < lower_threshold),
+            color="cyan",
+            alpha=0.2
+        )
 
-    plt.xticks(range(len(corr)), corr.columns, rotation=45)
-    plt.yticks(range(len(corr)), corr.columns)
+        plt.title(f"Sensor: {sensor}")
+        plt.xlabel("Time")
+        plt.ylabel("Value")
 
-    plt.title("Correlation Matrix")
+        plt.legend()
+        plt.grid(True)
+        plt.xticks(rotation=45)
 
-    out = output_dir / "correlation.png"
-    plt.savefig(out)
-    print(f"[INFO] {out}")
+        output_file = output_dir / f"{sensor}.png"
+        plt.savefig(output_file)
 
-    plt.close()
+        print(f"[INFO] Salvato: {output_file}")
 
-
-# =========================
-# 4. DERIVATA (DINAMICA)
-# =========================
-def plot_derivative(diff_df):
-    output_dir = _get_output_dir()
-
-    plt.figure(figsize=(14, 6))
-    diff_df.plot()
-
-    plt.title("Rate of Change (Derivative)")
-    plt.grid(True)
-
-    out = output_dir / "derivative.png"
-    plt.savefig(out)
-    print(f"[INFO] {out}")
-
-    plt.close()
-
-
-# =========================
-# 5. HEATMAP TEMPORALE
-# =========================
-def plot_time_heatmap(pivot_df):
-    output_dir = _get_output_dir()
-
-    # normalizzazione
-    norm = (pivot_df - pivot_df.min()) / (pivot_df.max() - pivot_df.min())
-
-    plt.figure(figsize=(14, 6))
-    plt.imshow(norm.T, aspect='auto')
-
-    plt.yticks(range(len(norm.columns)), norm.columns)
-    plt.title("Temporal Heatmap (Normalized)")
-
-    plt.colorbar()
-
-    out = output_dir / "heatmap.png"
-    plt.savefig(out)
-    print(f"[INFO] {out}")
-
-    plt.close()
+        plt.close()
