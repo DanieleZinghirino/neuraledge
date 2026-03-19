@@ -130,17 +130,17 @@ neuraledge_core/fast:
 .PHONY : neuraledge_core/fast
 
 #=============================================================================
-# Target rules for targets named neuraledge_edge
+# Target rules for targets named edge
 
 # Build rule for target.
-neuraledge_edge: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 neuraledge_edge
-.PHONY : neuraledge_edge
+edge: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 edge
+.PHONY : edge
 
 # fast build rule for target.
-neuraledge_edge/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_edge.dir/build.make CMakeFiles/neuraledge_edge.dir/build
-.PHONY : neuraledge_edge/fast
+edge/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/build
+.PHONY : edge/fast
 
 src/fault/NoFault.o: src/fault/NoFault.cpp.o
 .PHONY : src/fault/NoFault.o
@@ -190,12 +190,36 @@ src/fault/SpikeFault.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_core.dir/build.make CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.s
 .PHONY : src/fault/SpikeFault.cpp.s
 
+src/logger/CsvLogger.o: src/logger/CsvLogger.cpp.o
+.PHONY : src/logger/CsvLogger.o
+
+# target to build an object file
+src/logger/CsvLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_core.dir/build.make CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o
+.PHONY : src/logger/CsvLogger.cpp.o
+
+src/logger/CsvLogger.i: src/logger/CsvLogger.cpp.i
+.PHONY : src/logger/CsvLogger.i
+
+# target to preprocess a source file
+src/logger/CsvLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_core.dir/build.make CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.i
+.PHONY : src/logger/CsvLogger.cpp.i
+
+src/logger/CsvLogger.s: src/logger/CsvLogger.cpp.s
+.PHONY : src/logger/CsvLogger.s
+
+# target to generate assembly for a file
+src/logger/CsvLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_core.dir/build.make CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.s
+.PHONY : src/logger/CsvLogger.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_edge.dir/build.make CMakeFiles/neuraledge_edge.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -203,7 +227,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_edge.dir/build.make CMakeFiles/neuraledge_edge.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -211,7 +235,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_edge.dir/build.make CMakeFiles/neuraledge_edge.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/noise/GaussianNoise.o: src/noise/GaussianNoise.cpp.o
@@ -237,6 +261,30 @@ src/noise/GaussianNoise.s: src/noise/GaussianNoise.cpp.s
 src/noise/GaussianNoise.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_core.dir/build.make CMakeFiles/neuraledge_core.dir/src/noise/GaussianNoise.cpp.s
 .PHONY : src/noise/GaussianNoise.cpp.s
+
+src/runner/SensorRunner.o: src/runner/SensorRunner.cpp.o
+.PHONY : src/runner/SensorRunner.o
+
+# target to build an object file
+src/runner/SensorRunner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_core.dir/build.make CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o
+.PHONY : src/runner/SensorRunner.cpp.o
+
+src/runner/SensorRunner.i: src/runner/SensorRunner.cpp.i
+.PHONY : src/runner/SensorRunner.i
+
+# target to preprocess a source file
+src/runner/SensorRunner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_core.dir/build.make CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.i
+.PHONY : src/runner/SensorRunner.cpp.i
+
+src/runner/SensorRunner.s: src/runner/SensorRunner.cpp.s
+.PHONY : src/runner/SensorRunner.s
+
+# target to generate assembly for a file
+src/runner/SensorRunner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neuraledge_core.dir/build.make CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.s
+.PHONY : src/runner/SensorRunner.cpp.s
 
 src/sensor/Sensor.o: src/sensor/Sensor.cpp.o
 .PHONY : src/sensor/Sensor.o
@@ -294,20 +342,26 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... edge"
 	@echo "... neuraledge_core"
-	@echo "... neuraledge_edge"
 	@echo "... src/fault/NoFault.o"
 	@echo "... src/fault/NoFault.i"
 	@echo "... src/fault/NoFault.s"
 	@echo "... src/fault/SpikeFault.o"
 	@echo "... src/fault/SpikeFault.i"
 	@echo "... src/fault/SpikeFault.s"
+	@echo "... src/logger/CsvLogger.o"
+	@echo "... src/logger/CsvLogger.i"
+	@echo "... src/logger/CsvLogger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/noise/GaussianNoise.o"
 	@echo "... src/noise/GaussianNoise.i"
 	@echo "... src/noise/GaussianNoise.s"
+	@echo "... src/runner/SensorRunner.o"
+	@echo "... src/runner/SensorRunner.i"
+	@echo "... src/runner/SensorRunner.s"
 	@echo "... src/sensor/Sensor.o"
 	@echo "... src/sensor/Sensor.i"
 	@echo "... src/sensor/Sensor.s"

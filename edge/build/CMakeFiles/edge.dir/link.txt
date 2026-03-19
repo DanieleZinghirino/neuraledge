@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/edge.dir/src/main.cpp.o -o edge  libneuraledge_core.a 

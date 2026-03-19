@@ -12,3 +12,6 @@ output/
 cpp_core/build/
 *.o
 *.exe
+
+# VSCode
+.vscode/

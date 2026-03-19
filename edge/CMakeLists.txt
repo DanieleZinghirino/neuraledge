@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 
-# Nome progetto
+# =========================
+# PROJECT
+# =========================
 project(neuraledge_edge LANGUAGES CXX)
 
 # Standard C++
@@ -26,15 +28,21 @@ add_library(neuraledge_core
     # Fault
     src/fault/NoFault.cpp
     src/fault/SpikeFault.cpp
+
+    # 🔥 NEW: Logger
+    src/logger/CsvLogger.cpp
+
+    # 🔥 NEW: Runner
+    src/runner/SensorRunner.cpp
 )
 
-# Include directory (pubblica perché usata da chi linka)
+# Include directories
 target_include_directories(neuraledge_core
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-# Warning seri (importantissimo per qualità codice)
+# Warning seri (qualità codice)
 target_compile_options(neuraledge_core PRIVATE
     -Wall
     -Wextra
@@ -45,11 +53,11 @@ target_compile_options(neuraledge_core PRIVATE
 # EXECUTABLE
 # =========================
 
-add_executable(neuraledge_edge
+add_executable(edge
     src/main.cpp
 )
 
 # Link con la libreria core
-target_link_libraries(neuraledge_edge
+target_link_libraries(edge
     PRIVATE neuraledge_core
 )

@@ -66,7 +66,7 @@ def plot_per_sensor(df):
         plt.axhline(
             mean_value,
             linestyle=":",
-            color="yellow",
+            color="black",
             label=f"Mean = {mean_value:.2f}"
         )
 

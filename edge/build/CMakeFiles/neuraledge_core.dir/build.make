@@ -139,13 +139,43 @@ CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/fault/SpikeFault.cpp -o CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.s
 
+CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o: CMakeFiles/neuraledge_core.dir/flags.make
+CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o: /home/daniele/Work/neuraledge/edge/src/logger/CsvLogger.cpp
+CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o: CMakeFiles/neuraledge_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o -MF CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o.d -o CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o -c /home/daniele/Work/neuraledge/edge/src/logger/CsvLogger.cpp
+
+CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/logger/CsvLogger.cpp > CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.i
+
+CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/logger/CsvLogger.cpp -o CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.s
+
+CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o: CMakeFiles/neuraledge_core.dir/flags.make
+CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o: /home/daniele/Work/neuraledge/edge/src/runner/SensorRunner.cpp
+CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o: CMakeFiles/neuraledge_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o -MF CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o.d -o CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o -c /home/daniele/Work/neuraledge/edge/src/runner/SensorRunner.cpp
+
+CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/runner/SensorRunner.cpp > CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.i
+
+CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/runner/SensorRunner.cpp -o CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.s
+
 # Object files for target neuraledge_core
 neuraledge_core_OBJECTS = \
 "CMakeFiles/neuraledge_core.dir/src/sensor/Sensor.cpp.o" \
 "CMakeFiles/neuraledge_core.dir/src/signal/TemperatureSignal.cpp.o" \
 "CMakeFiles/neuraledge_core.dir/src/noise/GaussianNoise.cpp.o" \
 "CMakeFiles/neuraledge_core.dir/src/fault/NoFault.cpp.o" \
-"CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.o"
+"CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.o" \
+"CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o" \
+"CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o"
 
 # External object files for target neuraledge_core
 neuraledge_core_EXTERNAL_OBJECTS =
@@ -155,9 +185,11 @@ libneuraledge_core.a: CMakeFiles/neuraledge_core.dir/src/signal/TemperatureSigna
 libneuraledge_core.a: CMakeFiles/neuraledge_core.dir/src/noise/GaussianNoise.cpp.o
 libneuraledge_core.a: CMakeFiles/neuraledge_core.dir/src/fault/NoFault.cpp.o
 libneuraledge_core.a: CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.o
+libneuraledge_core.a: CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o
+libneuraledge_core.a: CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o
 libneuraledge_core.a: CMakeFiles/neuraledge_core.dir/build.make
 libneuraledge_core.a: CMakeFiles/neuraledge_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libneuraledge_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libneuraledge_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/neuraledge_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/neuraledge_core.dir/link.txt --verbose=$(VERBOSE)
 

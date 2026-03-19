@@ -10,7 +10,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/daniele/Work/neuraledge/edge/src/fault/NoFault.cpp" "CMakeFiles/neuraledge_core.dir/src/fault/NoFault.cpp.o" "gcc" "CMakeFiles/neuraledge_core.dir/src/fault/NoFault.cpp.o.d"
   "/home/daniele/Work/neuraledge/edge/src/fault/SpikeFault.cpp" "CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.o" "gcc" "CMakeFiles/neuraledge_core.dir/src/fault/SpikeFault.cpp.o.d"
+  "/home/daniele/Work/neuraledge/edge/src/logger/CsvLogger.cpp" "CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o" "gcc" "CMakeFiles/neuraledge_core.dir/src/logger/CsvLogger.cpp.o.d"
   "/home/daniele/Work/neuraledge/edge/src/noise/GaussianNoise.cpp" "CMakeFiles/neuraledge_core.dir/src/noise/GaussianNoise.cpp.o" "gcc" "CMakeFiles/neuraledge_core.dir/src/noise/GaussianNoise.cpp.o.d"
+  "/home/daniele/Work/neuraledge/edge/src/runner/SensorRunner.cpp" "CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o" "gcc" "CMakeFiles/neuraledge_core.dir/src/runner/SensorRunner.cpp.o.d"
   "/home/daniele/Work/neuraledge/edge/src/sensor/Sensor.cpp" "CMakeFiles/neuraledge_core.dir/src/sensor/Sensor.cpp.o" "gcc" "CMakeFiles/neuraledge_core.dir/src/sensor/Sensor.cpp.o.d"
   "/home/daniele/Work/neuraledge/edge/src/signal/TemperatureSignal.cpp" "CMakeFiles/neuraledge_core.dir/src/signal/TemperatureSignal.cpp.o" "gcc" "CMakeFiles/neuraledge_core.dir/src/signal/TemperatureSignal.cpp.o.d"
   )
