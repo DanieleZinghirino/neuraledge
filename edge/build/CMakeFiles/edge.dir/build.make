@@ -92,7 +92,12 @@ edge_EXTERNAL_OBJECTS =
 
 edge: CMakeFiles/edge.dir/src/main.cpp.o
 edge: CMakeFiles/edge.dir/build.make
-edge: libneuraledge_core.a
+edge: libedge_signal.a
+edge: libedge_noise.a
+edge: libedge_fault.a
+edge: libedge_sensor.a
+edge: libedge_logger.a
+edge: libedge_runner.a
 edge: CMakeFiles/edge.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable edge"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/edge.dir/link.txt --verbose=$(VERBOSE)

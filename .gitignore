@@ -9,7 +9,8 @@ __pycache__/
 output/
 
 # C++ build
-cpp_core/build/
+edge/build/
+edge/CmakeFiles/
 *.o
 *.exe
 

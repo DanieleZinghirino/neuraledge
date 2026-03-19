@@ -1,5 +1,7 @@
 #include "sensor/Sensor.hpp"
 #include "signal/TemperatureSignal.hpp"
+#include "signal/CurrentSignal.hpp"
+#include "signal/SpeedSignal.hpp"
 #include "noise/GaussianNoise.hpp"
 #include "fault/SpikeFault.hpp"
 
@@ -36,9 +38,9 @@ int main() {
     // 🟢 Sensori
     for (int i = 0; i < num_sensors; ++i) {
         sensors.emplace_back(
-            "temp" + std::to_string(i + 1),
+            "curr" + std::to_string(i + 1),
             dis_rate(gen),
-            std::make_unique<TemperatureSignal>(
+            std::make_unique<CurrentSignal>(
                 dis_temp(gen), dis_amp(gen), dis_freq(gen)),
             std::make_unique<GaussianNoise>(dis_noise(gen)),
             std::make_unique<SpikeFault>(dis_prob(gen), dis_spike(gen))

@@ -206,6 +206,8 @@ CMakeFiles/edge.dir/src/main.cpp.o: \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
  /home/daniele/Work/neuraledge/edge/include/signal/TemperatureSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/CurrentSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/SpeedSignal.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/GaussianNoise.hpp \
  /usr/include/c++/13/random /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
