@@ -30,7 +30,7 @@ void CsvLogger::init() {
         throw std::runtime_error("Cannot open file: " + filename_);
     }
 
-    ofs_ << "timestamp,sensor_id,value\n";
+    ofs_ << "timestamp,sensor_id,value,unit\n";
     ofs_.flush();
 }
 

@@ -8,3 +8,6 @@ double TemperatureSignal::generate(double t) {
     // Modello: T(t) = base + amplitude * sin(2 * pi * frequency * t)
     return base_ + amplitude_ * std::sin(2 * M_PI * frequency_ * t);
 }
+
+std::string TemperatureSignal::typeName() const { return "temp"; }
+std::string TemperatureSignal::unit()     const { return "C";    }

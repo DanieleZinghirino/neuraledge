@@ -6,3 +6,6 @@ SpeedSignal::SpeedSignal(double v0, double acc)
 double SpeedSignal::generate(double t) {
     return v0_ + acceleration_ * t;
 }
+
+std::string SpeedSignal::typeName() const { return "speed"; }
+std::string SpeedSignal::unit()     const { return "m/s";  }

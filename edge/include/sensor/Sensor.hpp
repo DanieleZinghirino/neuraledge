@@ -25,6 +25,7 @@ class Sensor : public ISensor {
         std::string id_;
         double sampling_rate_;
         double current_time_;
+        std::string unit_;
 
         std::unique_ptr<ISignalModel> signal_;
         std::unique_ptr<INoiseModel> noise_;

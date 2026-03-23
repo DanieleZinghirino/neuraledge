@@ -14,4 +14,7 @@ class TemperatureSignal : public ISignalModel {
         TemperatureSignal(double base, double amplitude, double frequency);
         
         double generate(double t) override;
+
+        std::string typeName() const override;
+        std::string unit()     const override;
 };

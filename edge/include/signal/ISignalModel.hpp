@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 /**
  * @brief Interfaccia astratta per un modello di segnale senza rumore (ideale).
@@ -8,7 +9,7 @@
  *
  * ESEMPIO: 
  * - temperatura
- * - vibrazione sinusoidale
+ * - vibrazione
  */
 class ISignalModel {
     public:
@@ -21,4 +22,8 @@ class ISignalModel {
          * @return valore ideale del segnale (senza rumore).
          */
         virtual double generate(double t) = 0;
+
+        virtual std::string typeName() const = 0;
+
+        virtual std::string unit() const = 0;
 };

@@ -29,25 +29,24 @@ Sensor SensorFactory::createRandom(std::mt19937& gen) {
     // SCELTA CASUALE DEL TIPO + COSTRUZIONE DEL SEGNALE
     // =========================================================
     std::unique_ptr<ISignalModel> signal;
-    std::string sensor_id;
 
     switch (dis_type(gen)) {
         case 0:
-            sensor_id = "temp"  + std::to_string(++counters_["temp"]);
             signal = std::make_unique<TemperatureSignal>(
                 dis_base(gen), dis_amp(gen), dis_freq(gen));
             break;
         case 1:
-            sensor_id = "curr"  + std::to_string(++counters_["curr"]);
             signal = std::make_unique<CurrentSignal>(
                 dis_base(gen), dis_amp(gen), dis_freq(gen));
             break;
         case 2:
-            sensor_id = "speed" + std::to_string(++counters_["speed"]);
             signal = std::make_unique<SpeedSignal>(
                 dis_v0(gen), dis_accel(gen));
             break;
     }
+
+    const std::string type = signal->typeName();
+    const std::string sensor_id = type + std::to_string(++counters_[type]);
 
     // =========================================================
     // RUMORE E FAULT — uguali per tutti i tipi di sensore

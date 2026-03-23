@@ -13,4 +13,5 @@ struct Sample {
     std::string sensor_id;
     double value;
     std::string timestamp;
+    std::string unit;
 };

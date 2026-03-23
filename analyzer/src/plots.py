@@ -47,6 +47,9 @@ def plot_per_sensor(df):
         high_anomalies = sensor_df[sensor_df["value"] > upper_threshold]
         low_anomalies = sensor_df[sensor_df["value"] < lower_threshold]
 
+        # Unità di misura
+        unit = sensor_df["unit"].iloc[0]
+
         plt.figure(figsize=(11, 5))
 
         # Segnale reale
@@ -131,7 +134,7 @@ def plot_per_sensor(df):
 
         plt.title(f"Sensor: {sensor}")
         plt.xlabel("Time")
-        plt.ylabel("Value")
+        plt.ylabel(f"Value ({unit})")
 
         plt.legend()
         plt.grid(True)

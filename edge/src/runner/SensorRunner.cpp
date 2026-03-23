@@ -15,11 +15,12 @@ void SensorRunner::worker(Sensor& sensor) {
             std::lock_guard<std::mutex> lock(cout_mtx_);
             std::cout << s.timestamp << " | "
                       << s.sensor_id << " | "
-                      << s.value << std::endl;
+                      << s.value
+                      << s.unit << std::endl;
         }
 
         std::string line =
-            s.timestamp + "," + s.sensor_id + "," + std::to_string(s.value);
+            s.timestamp + "," + s.sensor_id + "," + std::to_string(s.value) + "," + s.unit;
 
         logger_.log(line);
 

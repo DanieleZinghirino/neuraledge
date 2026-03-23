@@ -13,4 +13,7 @@ public:
     SpeedSignal(double v0, double acceleration);
 
     double generate(double t) override;
+
+    std::string typeName() const override;
+    std::string unit()     const override;
 };

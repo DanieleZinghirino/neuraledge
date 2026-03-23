@@ -6,8 +6,14 @@ Sensor::Sensor(std::string id,
                std::unique_ptr<ISignalModel> signal,
                std::unique_ptr<INoiseModel> noise,
                std::unique_ptr<IFaultModel> fault)
-    : id_(std::move(id)), sampling_rate_(rate), current_time_(0.0),
-      signal_(std::move(signal)), noise_(std::move(noise)), fault_(std::move(fault)) {}
+    : id_(std::move(id)), 
+      sampling_rate_(rate), 
+      current_time_(0.0),
+      signal_(std::move(signal)), 
+      noise_(std::move(noise)), 
+      fault_(std::move(fault)) {
+        unit_ = signal_->unit();
+      }
 
 /**
  * PIPELINE:
@@ -33,7 +39,8 @@ Sample Sensor::read() {
     Sample sample {
         id_,
         final_value,
-        timestamp
+        timestamp,
+        unit_
     };
 
     // Aggiorna il tempo per la prossima lettura
