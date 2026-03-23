@@ -11,11 +11,11 @@ echo "===================================="
 # =========================
 echo "[STEP 1] Building Edge (C++)..."
 
-cd edge || exit
+cd edge
 mkdir -p build
-cd build || exit
+cd build
 
-cmake ..
+cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 
 echo "[OK] Build completata"
@@ -30,13 +30,26 @@ echo "[STEP 2] Running sensors simulation..."
 echo "[OK] Simulation completed"
 
 # =========================
-# 3. RUN PYTHON
+# 3. SETUP PYTHON
 # =========================
-echo "[STEP 3] Running output analysis..."
+echo "[STEP 3] Setting up Python environment..."
 
-cd ../../analyzer|| exit
+cd ../../analyzer
 
-# Usa direttamente il Python del venv
+if [ ! -d "venv" ]; then
+    echo "[INFO] Creating virtual environment..."
+    python3 -m venv venv
+fi
+
+venv/bin/pip install -r requirements.txt --quiet
+
+echo "[OK] Python environment ready"
+
+# =========================
+# 4. RUN PYTHON
+# =========================
+echo "[STEP 4] Running output analysis..."
+
 venv/bin/python src/main.py
 
 echo "[OK] Analysis completed"

@@ -4,15 +4,20 @@ import matplotlib.pyplot as plt
 
 
 def _get_output_dir() -> Path:
+    """
+    BUG FIX:
+    - La cartella veniva ricreata solo se esisteva già (logica invertita).
+    - La funzione poteva ritornare None implicitamente se il ramo if non entrava.
+    - Ora: cancella se esiste, poi crea sempre con parents=True.
+    """
     output_dir = Path(__file__).resolve().parents[2] / "output/plots"
+
     if output_dir.exists():
-        # Cancella tutti i file dentro la cartella
-        if output_dir.exists():
-            shutil.rmtree(output_dir)
+        shutil.rmtree(output_dir)
 
-        output_dir.mkdir()
+    output_dir.mkdir(parents=True, exist_ok=True)
 
-        return output_dir
+    return output_dir
 
 
 def plot_per_sensor(df):

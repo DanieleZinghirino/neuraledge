@@ -195,6 +195,19 @@ edge_runner/fast:
 .PHONY : edge_runner/fast
 
 #=============================================================================
+# Target rules for targets named edge_factory
+
+# Build rule for target.
+edge_factory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 edge_factory
+.PHONY : edge_factory
+
+# fast build rule for target.
+edge_factory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_factory.dir/build.make CMakeFiles/edge_factory.dir/build
+.PHONY : edge_factory/fast
+
+#=============================================================================
 # Target rules for targets named edge
 
 # Build rule for target.
@@ -206,6 +219,30 @@ edge: cmake_check_build_system
 edge/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/build
 .PHONY : edge/fast
+
+src/factory/SensorFactory.o: src/factory/SensorFactory.cpp.o
+.PHONY : src/factory/SensorFactory.o
+
+# target to build an object file
+src/factory/SensorFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_factory.dir/build.make CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o
+.PHONY : src/factory/SensorFactory.cpp.o
+
+src/factory/SensorFactory.i: src/factory/SensorFactory.cpp.i
+.PHONY : src/factory/SensorFactory.i
+
+# target to preprocess a source file
+src/factory/SensorFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_factory.dir/build.make CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.i
+.PHONY : src/factory/SensorFactory.cpp.i
+
+src/factory/SensorFactory.s: src/factory/SensorFactory.cpp.s
+.PHONY : src/factory/SensorFactory.s
+
+# target to generate assembly for a file
+src/factory/SensorFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_factory.dir/build.make CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.s
+.PHONY : src/factory/SensorFactory.cpp.s
 
 src/fault/NoFault.o: src/fault/NoFault.cpp.o
 .PHONY : src/fault/NoFault.o
@@ -456,12 +493,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... edge"
+	@echo "... edge_factory"
 	@echo "... edge_fault"
 	@echo "... edge_logger"
 	@echo "... edge_noise"
 	@echo "... edge_runner"
 	@echo "... edge_sensor"
 	@echo "... edge_signal"
+	@echo "... src/factory/SensorFactory.o"
+	@echo "... src/factory/SensorFactory.i"
+	@echo "... src/factory/SensorFactory.s"
 	@echo "... src/fault/NoFault.o"
 	@echo "... src/fault/NoFault.i"
 	@echo "... src/fault/NoFault.s"

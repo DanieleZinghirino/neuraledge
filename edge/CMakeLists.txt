@@ -5,108 +5,84 @@ cmake_minimum_required(VERSION 3.16)
 # =========================
 project(neuraledge_edge LANGUAGES CXX)
 
-# Standard C++
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # =========================
-# LIBRERIA CORE
+# INTERFACE LIBRARY — opzioni condivise da tutti i target
+# Chiunque si linki a "project_options" eredita standard e warning
+# senza doverli ridichiarare su ogni target
 # =========================
+add_library(project_options INTERFACE)
 
-add_library(edge_signal
+target_compile_options(project_options INTERFACE
+    -Wall
+    -Wextra
+    -Wpedantic
+)
+
+target_include_directories(project_options INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+# =========================
+# HELPER MACRO
+# Evita di ripetere include_dirs e compile_options su ogni libreria.
+# Uso: make_edge_lib(<nome> <sorgenti...>)
+# =========================
+macro(make_edge_lib NAME)
+    add_library(${NAME} ${ARGN})
+    target_link_libraries(${NAME} PUBLIC project_options)
+endmacro()
+
+# =========================
+# LIBRERIE CORE
+# =========================
+make_edge_lib(edge_signal
+    src/signal/TemperatureSignal.cpp
     src/signal/CurrentSignal.cpp
     src/signal/SpeedSignal.cpp
-    src/signal/TemperatureSignal.cpp)
+)
 
-add_library(edge_noise
-    src/noise/GaussianNoise.cpp)
+make_edge_lib(edge_noise
+    src/noise/GaussianNoise.cpp
+)
 
-add_library(edge_fault
+make_edge_lib(edge_fault
     src/fault/NoFault.cpp
-    src/fault/SpikeFault.cpp)
-
-add_library(edge_sensor
-    src/sensor/Sensor.cpp)
-
-add_library(edge_logger
-    src/logger/CsvLogger.cpp)
-
-add_library(edge_runner
-    src/runner/SensorRunner.cpp)
-
-# Include directories
-target_include_directories(edge_signal
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
-target_include_directories(edge_noise
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
-target_include_directories(edge_fault
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
-target_include_directories(edge_sensor
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
-target_include_directories(edge_logger
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
-target_include_directories(edge_runner
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
+    src/fault/SpikeFault.cpp
 )
 
-# Warning seri (qualità codice)
-target_compile_options(edge_signal PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
+make_edge_lib(edge_sensor
+    src/sensor/Sensor.cpp
 )
-target_compile_options(edge_noise PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
+
+make_edge_lib(edge_logger
+    src/logger/CsvLogger.cpp
 )
-target_compile_options(edge_fault PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
+
+make_edge_lib(edge_runner
+    src/runner/SensorRunner.cpp
 )
-target_compile_options(edge_sensor PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
+
+make_edge_lib(edge_factory
+    src/factory/SensorFactory.cpp
 )
-target_compile_options(edge_logger PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
-)
-target_compile_options(edge_runner PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
-)
+
+# Dipendenze esplicite tra librerie
+target_link_libraries(edge_sensor  PRIVATE edge_signal edge_noise edge_fault)
+target_link_libraries(edge_runner  PRIVATE edge_sensor edge_logger)
+target_link_libraries(edge_factory PRIVATE edge_signal edge_noise edge_fault)
 
 # =========================
 # EXECUTABLE
 # =========================
+add_executable(edge src/main.cpp)
 
-add_executable(edge
-    src/main.cpp
-)
-
-# Link con la libreria core
 target_link_libraries(edge
-    PRIVATE edge_signal
-    PRIVATE edge_noise
-    PRIVATE edge_fault
     PRIVATE edge_sensor
     PRIVATE edge_logger
     PRIVATE edge_runner
+    PRIVATE edge_factory
 )

@@ -1,4 +1,0 @@
-/home/daniele/Work/neuraledge/edge/CMakeFiles/neuraledge_core.dir
-/home/daniele/Work/neuraledge/edge/CMakeFiles/neuraledge_edge.dir
-/home/daniele/Work/neuraledge/edge/CMakeFiles/edit_cache.dir
-/home/daniele/Work/neuraledge/edge/CMakeFiles/rebuild_cache.dir

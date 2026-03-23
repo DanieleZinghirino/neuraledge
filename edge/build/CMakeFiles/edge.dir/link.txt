@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/edge.dir/src/main.cpp.o -o edge  libedge_signal.a libedge_noise.a libedge_fault.a libedge_sensor.a libedge_logger.a libedge_runner.a 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/edge.dir/src/main.cpp.o -o edge  libedge_sensor.a libedge_logger.a libedge_runner.a libedge_factory.a libedge_sensor.a libedge_logger.a libedge_signal.a libedge_noise.a libedge_fault.a 

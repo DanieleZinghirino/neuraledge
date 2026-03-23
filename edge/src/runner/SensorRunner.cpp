@@ -1,32 +1,29 @@
 #include "runner/SensorRunner.hpp"
 #include <chrono>
-#include <random>
 #include <iostream>
 
-static std::random_device rd;
-static std::mt19937 gen(rd());
-
-SensorRunner::SensorRunner(std::vector<Sensor>& sensors, CsvLogger& logger)
+SensorRunner::SensorRunner(std::vector<Sensor>& sensors, ILogger& logger)
     : sensors_(sensors), logger_(logger) {}
 
 void SensorRunner::worker(Sensor& sensor) {
-    std::uniform_real_distribution<double> sleep_dist(500, 2000);
+    const int sleep_ms = static_cast<int>(1000.0 / sensor.getSamplingRate());
 
     for (int i = 0; i < 100; ++i) {
         auto s = sensor.read();
 
-        std::this_thread::sleep_for(
-            std::chrono::milliseconds((int)sleep_dist(gen))
-        );
-
-        std::cout << s.timestamp << " | "
-                  << s.sensor_id << " | "
-                  << s.value << std::endl;
+        {
+            std::lock_guard<std::mutex> lock(cout_mtx_);
+            std::cout << s.timestamp << " | "
+                      << s.sensor_id << " | "
+                      << s.value << std::endl;
+        }
 
         std::string line =
             s.timestamp + "," + s.sensor_id + "," + std::to_string(s.value);
 
         logger_.log(line);
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(sleep_ms));
     }
 }
 

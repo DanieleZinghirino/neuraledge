@@ -17,7 +17,15 @@ public:
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
 
         std::time_t now_time = std::chrono::system_clock::to_time_t(now);
-        std::tm local_tm = *std::localtime(&now_time);
+
+        // BUG FIX: std::localtime non è thread-safe (buffer statico condiviso).
+        // Usiamo localtime_r (POSIX) su Linux/macOS, localtime_s (MSVC) su Windows.
+        std::tm local_tm{};
+#ifdef _WIN32
+        localtime_s(&local_tm, &now_time);
+#else
+        localtime_r(&now_time, &local_tm);
+#endif
 
         std::ostringstream oss;
         oss << std::put_time(&local_tm, format.c_str());
@@ -27,13 +35,19 @@ public:
         return oss.str();
     }
 
-    // Timestamp leggibile in UTC
     static std::string nowUTC(const std::string& format = "%Y-%m-%d %H:%M:%S", bool includeMs = true) {
         auto now = std::chrono::system_clock::now();
         auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
 
         std::time_t now_time = std::chrono::system_clock::to_time_t(now);
-        std::tm utc_tm = *std::gmtime(&now_time);
+
+        // BUG FIX: std::gmtime non è thread-safe — stessa soluzione di nowLocal.
+        std::tm utc_tm{};
+#ifdef _WIN32
+        gmtime_s(&utc_tm, &now_time);
+#else
+        gmtime_r(&now_time, &utc_tm);
+#endif
 
         std::ostringstream oss;
         oss << std::put_time(&utc_tm, format.c_str());

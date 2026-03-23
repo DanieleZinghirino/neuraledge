@@ -1,0 +1,2 @@
+/usr/bin/ar qc libedge_signal.a CMakeFiles/edge_signal.dir/src/signal/TemperatureSignal.cpp.o CMakeFiles/edge_signal.dir/src/signal/CurrentSignal.cpp.o CMakeFiles/edge_signal.dir/src/signal/SpeedSignal.cpp.o
+/usr/bin/ranlib libedge_signal.a

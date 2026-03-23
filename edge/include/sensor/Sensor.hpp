@@ -36,4 +36,6 @@ class Sensor : public ISensor {
                std::unique_ptr<IFaultModel> fault);
         
         Sample read() override;
+
+        double getSamplingRate() const { return sampling_rate_; }
 };

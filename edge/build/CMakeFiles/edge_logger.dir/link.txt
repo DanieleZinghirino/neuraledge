@@ -1,0 +1,2 @@
+/usr/bin/ar qc libedge_logger.a CMakeFiles/edge_logger.dir/src/logger/CsvLogger.cpp.o
+/usr/bin/ranlib libedge_logger.a

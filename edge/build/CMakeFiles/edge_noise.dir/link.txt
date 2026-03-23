@@ -1,0 +1,2 @@
+/usr/bin/ar qc libedge_noise.a CMakeFiles/edge_noise.dir/src/noise/GaussianNoise.cpp.o
+/usr/bin/ranlib libedge_noise.a
