@@ -1,33 +1,31 @@
 #pragma once
 
+#include "config/SensorConfig.hpp"
 #include "sensor/Sensor.hpp"
+
 #include <random>
-#include <string>
-#include <map>
+#include <vector>
 
 /**
- * @brief Factory per la creazione di Sensor con tipo casuale.
+ * @brief Factory config-driven per la creazione dei sensori.
  *
- * WHY FACTORY METHOD:
- * - Il main non conosce i tipi concreti di ISignalModel
- * - Aggiungere un nuovo tipo di segnale = modificare solo questa classe
- * - Principio Open/Closed: aperto all'estensione, chiuso alla modifica
+ * WHY:
+ * - il main non conosce i tipi concreti dei modelli;
+ * - la composizione signal/noise/fault viene centralizzata;
+ * - il file di configurazione diventa la fonte di verità dello scenario.
  */
 class SensorFactory {
 public:
     /**
-     * @brief Crea un Sensor con tipo di segnale scelto casualmente.
-     *
-     * @param gen    Generatore Mersenne Twister condiviso con il main
-     * @return       Sensor completamente configurato con id incrementale
+     * @brief Crea un singolo sensore a partire da una SensorConfig.
      */
-    static Sensor createRandom(std::mt19937& gen);
+    static Sensor createFromConfig(const config::SensorConfig& cfg, std::mt19937& gen);
 
-private:
     /**
-     * @brief Contatori per tipo — static per persistere tra le chiamate.
-     * Ogni volta che viene creato un sensore di un certo tipo,
-     * il contatore corrispondente viene incrementato.
+     * @brief Crea tutti i sensori dichiarati in configurazione.
      */
-    static std::map<std::string, int> counters_;
+    static std::vector<Sensor> createAllFromConfig(
+        const std::vector<config::SensorConfig>& configs,
+        std::mt19937& gen
+    );
 };

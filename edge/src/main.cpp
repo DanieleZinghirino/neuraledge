@@ -1,37 +1,50 @@
-#include "sensor/Sensor.hpp"
+#include "config/ConfigLoader.hpp"
 #include "factory/SensorFactory.hpp"
 #include "logger/CsvLogger.hpp"
 #include "runner/SensorRunner.hpp"
 
+#include <exception>
 #include <iostream>
-#include <vector>
 #include <random>
+#include <vector>
 
-int main() {
-    int num_sensors;
-    std::cout << "Insert number of sensors: ";
-    std::cin >> num_sensors;
+int main(int argc, char** argv) {
+    try {
+        if (argc != 2) {
+            std::cerr << "Usage: ./edge <path-to-config.yaml>\n";
+            return 1;
+        }
 
-    std::vector<Sensor> sensors;
+        const std::string config_path = argv[1];
 
-    // Il gen viene passato alla factory così la sequenza random
-    // è controllata da un unico punto (riproducibile con seed fisso)
-    std::random_device rd;
-    std::mt19937 gen(rd());
+        // 1. Caricamento configurazione
+        const config::AppConfig app_config =
+            config::ConfigLoader::loadFromYaml(config_path);
 
-    // 🔴 Logger
-    CsvLogger logger("../../output/sensor_data.csv");
-    logger.init();
+        // 2. PRNG riproducibile
+        std::mt19937 gen(app_config.simulation.seed);
 
-    // 🟢 Sensori — il main non sa nulla dei tipi concreti
-    for (int i = 0; i < num_sensors; ++i) {
-        sensors.push_back(SensorFactory::createRandom(gen));
+        // 3. Logger
+        CsvLogger logger(app_config.simulation.output_csv);
+        logger.init();
+
+        // 4. Sensori costruiti da configurazione
+        std::vector<Sensor> sensors =
+            SensorFactory::createAllFromConfig(app_config.sensors, gen);
+
+        // 5. Runner
+        SensorRunner runner(
+            sensors,
+            logger,
+            app_config.simulation.duration_seconds
+        );
+
+        runner.run();
+
+        std::cout << "Simulation completed\n";
+        return 0;
+    } catch (const std::exception& ex) {
+        std::cerr << "Fatal error: " << ex.what() << '\n';
+        return 2;
     }
-
-    // 🔵 Runner
-    SensorRunner runner(sensors, logger);
-    runner.run();
-
-    std::cout << "Simulation completed\n";
-    return 0;
 }

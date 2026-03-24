@@ -208,6 +208,19 @@ edge_factory/fast:
 .PHONY : edge_factory/fast
 
 #=============================================================================
+# Target rules for targets named edge_config
+
+# Build rule for target.
+edge_config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 edge_config
+.PHONY : edge_config
+
+# fast build rule for target.
+edge_config/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_config.dir/build.make CMakeFiles/edge_config.dir/build
+.PHONY : edge_config/fast
+
+#=============================================================================
 # Target rules for targets named edge
 
 # Build rule for target.
@@ -219,6 +232,30 @@ edge: cmake_check_build_system
 edge/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/build
 .PHONY : edge/fast
+
+src/config/ConfigLoader.o: src/config/ConfigLoader.cpp.o
+.PHONY : src/config/ConfigLoader.o
+
+# target to build an object file
+src/config/ConfigLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_config.dir/build.make CMakeFiles/edge_config.dir/src/config/ConfigLoader.cpp.o
+.PHONY : src/config/ConfigLoader.cpp.o
+
+src/config/ConfigLoader.i: src/config/ConfigLoader.cpp.i
+.PHONY : src/config/ConfigLoader.i
+
+# target to preprocess a source file
+src/config/ConfigLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_config.dir/build.make CMakeFiles/edge_config.dir/src/config/ConfigLoader.cpp.i
+.PHONY : src/config/ConfigLoader.cpp.i
+
+src/config/ConfigLoader.s: src/config/ConfigLoader.cpp.s
+.PHONY : src/config/ConfigLoader.s
+
+# target to generate assembly for a file
+src/config/ConfigLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_config.dir/build.make CMakeFiles/edge_config.dir/src/config/ConfigLoader.cpp.s
+.PHONY : src/config/ConfigLoader.cpp.s
 
 src/factory/SensorFactory.o: src/factory/SensorFactory.cpp.o
 .PHONY : src/factory/SensorFactory.o
@@ -877,6 +914,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... edge"
+	@echo "... edge_config"
 	@echo "... edge_factory"
 	@echo "... edge_fault"
 	@echo "... edge_logger"
@@ -884,6 +922,9 @@ help:
 	@echo "... edge_runner"
 	@echo "... edge_sensor"
 	@echo "... edge_signal"
+	@echo "... src/config/ConfigLoader.o"
+	@echo "... src/config/ConfigLoader.i"
+	@echo "... src/config/ConfigLoader.s"
 	@echo "... src/factory/SensorFactory.o"
 	@echo "... src/factory/SensorFactory.i"
 	@echo "... src/factory/SensorFactory.s"

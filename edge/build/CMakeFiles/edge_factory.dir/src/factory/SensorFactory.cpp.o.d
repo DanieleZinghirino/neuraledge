@@ -2,9 +2,8 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: \
  /home/daniele/Work/neuraledge/edge/src/factory/SensorFactory.cpp \
  /usr/include/stdc-predef.h \
  /home/daniele/Work/neuraledge/edge/include/factory/SensorFactory.hpp \
- /home/daniele/Work/neuraledge/edge/include/sensor/Sensor.hpp \
- /home/daniele/Work/neuraledge/edge/include/sensor/ISensor.hpp \
- /home/daniele/Work/neuraledge/edge/include/sensor/Sample.hpp \
+ /home/daniele/Work/neuraledge/edge/include/config/SensorConfig.hpp \
+ /home/daniele/Work/neuraledge/edge/include/config/ModelConfig.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -132,7 +131,17 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /usr/include/c++/13/bits/ranges_util.h \
+ /usr/include/c++/13/bits/ranges_util.h /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/erase_if.h \
+ /home/daniele/Work/neuraledge/edge/include/sensor/Sensor.hpp \
+ /home/daniele/Work/neuraledge/edge/include/sensor/ISensor.hpp \
+ /home/daniele/Work/neuraledge/edge/include/sensor/Sample.hpp \
  /home/daniele/Work/neuraledge/edge/include/sensor/../signal/ISignalModel.hpp \
  /home/daniele/Work/neuraledge/edge/include/sensor/../noise/INoiseModel.hpp \
  /home/daniele/Work/neuraledge/edge/include/sensor/../fault/IFaultModel.hpp \
@@ -182,7 +191,6 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: \
  /usr/include/c++/13/bits/shared_ptr.h \
  /usr/include/c++/13/bits/shared_ptr_base.h \
  /usr/include/c++/13/bits/allocated_ptr.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
  /usr/include/c++/13/ext/concurrence.h \
  /usr/include/c++/13/bits/shared_ptr_atomic.h \
  /usr/include/c++/13/bits/atomic_base.h \
@@ -247,32 +255,34 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
- /usr/include/c++/13/pstl/glue_numeric_defs.h /usr/include/c++/13/map \
- /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
- /usr/include/c++/13/bits/erase_if.h \
- /home/daniele/Work/neuraledge/edge/include/signal/TemperatureSignal.hpp \
+ /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /home/daniele/Work/neuraledge/edge/include/signal/CurrentSignal.hpp \
- /home/daniele/Work/neuraledge/edge/include/signal/SpeedSignal.hpp \
- /home/daniele/Work/neuraledge/edge/include/signal/VibrationSignal.hpp \
- /home/daniele/Work/neuraledge/edge/include/signal/PressureSignal.hpp \
  /home/daniele/Work/neuraledge/edge/include/signal/HumiditySignal.hpp \
- /home/daniele/Work/neuraledge/edge/include/signal/SquareWaveSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/PressureSignal.hpp \
  /home/daniele/Work/neuraledge/edge/include/signal/RampSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/SpeedSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/SquareWaveSignal.hpp \
  /home/daniele/Work/neuraledge/edge/include/signal/StepResponseSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/TemperatureSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/VibrationSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/noise/DriftNoise.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/GaussianNoise.hpp \
- /home/daniele/Work/neuraledge/edge/include/noise/UniformNoise.hpp \
+ /home/daniele/Work/neuraledge/edge/include/noise/ImpulseNoise.hpp \
+ /home/daniele/Work/neuraledge/edge/include/noise/PeriodicNoise.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/PinkNoise.hpp \
  /usr/include/c++/13/array \
- /home/daniele/Work/neuraledge/edge/include/noise/DriftNoise.hpp \
- /home/daniele/Work/neuraledge/edge/include/noise/PeriodicNoise.hpp \
+ /home/daniele/Work/neuraledge/edge/include/noise/UniformNoise.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/DriftFault.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/DropoutFault.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/NoFault.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/SaturationFault.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/ScalingFault.hpp \
  /home/daniele/Work/neuraledge/edge/include/fault/SpikeFault.hpp \
  /home/daniele/Work/neuraledge/edge/include/fault/StuckFault.hpp \
- /usr/include/c++/13/optional \
- /usr/include/c++/13/bits/enable_special_members.h \
- /home/daniele/Work/neuraledge/edge/include/fault/DriftFault.hpp \
- /home/daniele/Work/neuraledge/edge/include/fault/ScalingFault.hpp \
- /home/daniele/Work/neuraledge/edge/include/fault/SaturationFault.hpp \
- /home/daniele/Work/neuraledge/edge/include/fault/DropoutFault.hpp
+ /usr/include/c++/13/optional /usr/include/c++/13/algorithm \
+ /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/ranges_algo.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h

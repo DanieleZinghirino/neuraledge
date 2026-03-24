@@ -1,0 +1,591 @@
+simulation:
+  seed: 123
+  duration_seconds: 30
+  output_csv: "../../output/sensor_data_faulty.csv"
+
+sensors:
+  - id: temp_1
+    type: temperature
+    sampling_rate: 1.0
+    signal:
+      model: temperature
+      params:
+        base: 24.5
+        tau: 200.0
+        slow_amp: 1.0
+        slow_freq: 0.001
+        fast_amp: 0.05
+        fast_freq: 0.03
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.04
+    fault:
+      model: none
+      params: {}
+
+  - id: temp_2
+    type: temperature
+    sampling_rate: 1.0
+    signal:
+      model: temperature
+      params:
+        base: 58.0
+        tau: 150.0
+        slow_amp: 1.5
+        slow_freq: 0.0012
+        fast_amp: 0.10
+        fast_freq: 0.05
+    noise:
+      model: drift
+      params:
+        step_sigma: 0.002
+        max_drift: 0.35
+    fault:
+      model: scaling
+      params:
+        scale_factor: 1.04
+        activation_prob: 0.005
+
+  - id: temp_3
+    type: temperature
+    sampling_rate: 2.0
+    signal:
+      model: temperature
+      params:
+        base: 88.0
+        tau: 180.0
+        slow_amp: 1.8
+        slow_freq: 0.001
+        fast_amp: 0.12
+        fast_freq: 0.06
+    noise:
+      model: periodic
+      params:
+        amplitude: 0.04
+        frequency: 50.0
+        phase: 0.2
+    fault:
+      model: saturation
+      params:
+        lower_bound: 0.0
+        upper_bound: 95.0
+        activation_prob: 0.004
+
+  - id: curr_1
+    type: current
+    sampling_rate: 20.0
+    signal:
+      model: current
+      params:
+        base: 1.2
+        fundamental: 2.8
+        freq: 50.0
+        thd3_amp: 0.18
+        thd3_phase: 0.1
+        thd5_amp: 0.08
+        thd5_phase: 0.2
+        load_period: 10.0
+        delta_i: 1.0
+        tau_load: 0.9
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.03
+    fault:
+      model: spike
+      params:
+        probability: 0.01
+        magnitude: 1.0
+
+  - id: curr_2
+    type: current
+    sampling_rate: 50.0
+    signal:
+      model: current
+      params:
+        base: 2.5
+        fundamental: 5.5
+        freq: 50.0
+        thd3_amp: 0.35
+        thd3_phase: 0.25
+        thd5_amp: 0.15
+        thd5_phase: 0.4
+        load_period: 8.0
+        delta_i: 1.8
+        tau_load: 0.8
+    noise:
+      model: periodic
+      params:
+        amplitude: 0.04
+        frequency: 100.0
+        phase: 0.0
+    fault:
+      model: drift
+      params:
+        activation_prob: 0.004
+        drift_rate: 0.01
+        max_drift: 0.6
+        exponent: 1.4
+
+  - id: curr_3
+    type: current
+    sampling_rate: 100.0
+    signal:
+      model: current
+      params:
+        base: 4.5
+        fundamental: 9.5
+        freq: 50.0
+        thd3_amp: 0.55
+        thd3_phase: 0.15
+        thd5_amp: 0.22
+        thd5_phase: 0.45
+        load_period: 6.0
+        delta_i: 2.5
+        tau_load: 0.6
+    noise:
+      model: impulse
+      params:
+        probability: 0.01
+        impulse_sigma: 0.18
+    fault:
+      model: dropout
+      params:
+        probability: 0.02
+        mode: burst
+        burst_length: 3
+
+  - id: speed_1
+    type: speed
+    sampling_rate: 5.0
+    signal:
+      model: speed
+      params:
+        vmax: 1.4
+        t_acc: 2.0
+        t_cruise: 8.0
+        t_dec: 2.0
+        t_stop: 3.0
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.02
+    fault:
+      model: none
+      params: {}
+
+  - id: speed_2
+    type: speed
+    sampling_rate: 10.0
+    signal:
+      model: speed
+      params:
+        vmax: 3.0
+        t_acc: 3.0
+        t_cruise: 10.0
+        t_dec: 3.0
+        t_stop: 4.0
+    noise:
+      model: drift
+      params:
+        step_sigma: 0.0015
+        max_drift: 0.12
+    fault:
+      model: scaling
+      params:
+        scale_factor: 0.95
+        activation_prob: 0.005
+
+  - id: speed_3
+    type: speed
+    sampling_rate: 20.0
+    signal:
+      model: speed
+      params:
+        vmax: 5.5
+        t_acc: 4.0
+        t_cruise: 15.0
+        t_dec: 4.0
+        t_stop: 4.0
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.03
+    fault:
+      model: stuck
+      params:
+        stuck_prob: 0.003
+
+  - id: vib_1
+    type: vibration
+    sampling_rate: 100.0
+    signal:
+      model: vibration
+      params:
+        base_freq: 25.0
+        amp1: 0.60
+        amp2: 0.20
+        amp3: 0.08
+        phase1: 0.0
+        phase2: 0.2
+        phase3: 0.5
+    noise:
+      model: pink
+      params:
+        sigma: 0.03
+    fault:
+      model: none
+      params: {}
+
+  - id: vib_2
+    type: vibration
+    sampling_rate: 200.0
+    signal:
+      model: vibration
+      params:
+        base_freq: 40.0
+        amp1: 1.20
+        amp2: 0.45
+        amp3: 0.18
+        phase1: 0.1
+        phase2: 0.3
+        phase3: 0.6
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.05
+    fault:
+      model: spike
+      params:
+        probability: 0.01
+        magnitude: 1.2
+
+  - id: vib_3
+    type: vibration
+    sampling_rate: 500.0
+    signal:
+      model: vibration
+      params:
+        base_freq: 60.0
+        amp1: 1.80
+        amp2: 0.70
+        amp3: 0.28
+        phase1: 0.0
+        phase2: 0.25
+        phase3: 0.7
+    noise:
+      model: impulse
+      params:
+        probability: 0.015
+        impulse_sigma: 0.15
+    fault:
+      model: saturation
+      params:
+        lower_bound: -4.0
+        upper_bound: 4.0
+        activation_prob: 0.004
+
+  - id: press_1
+    type: pressure
+    sampling_rate: 2.0
+    signal:
+      model: pressure
+      params:
+        baseline: 3.2
+        slow_amplitude: 0.12
+        slow_freq: 0.002
+        transient_prob: 0.004
+        transient_mag: 0.5
+        transient_tau: 1.5
+        p_max: 6.0
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.015
+    fault:
+      model: none
+      params: {}
+
+  - id: press_2
+    type: pressure
+    sampling_rate: 5.0
+    signal:
+      model: pressure
+      params:
+        baseline: 5.8
+        slow_amplitude: 0.22
+        slow_freq: 0.004
+        transient_prob: 0.006
+        transient_mag: 0.8
+        transient_tau: 1.0
+        p_max: 10.0
+    noise:
+      model: periodic
+      params:
+        amplitude: 0.03
+        frequency: 50.0
+        phase: 0.2
+    fault:
+      model: drift
+      params:
+        activation_prob: 0.003
+        drift_rate: 0.008
+        max_drift: 0.8
+        exponent: 1.3
+
+  - id: press_3
+    type: pressure
+    sampling_rate: 10.0
+    signal:
+      model: pressure
+      params:
+        baseline: 8.2
+        slow_amplitude: 0.28
+        slow_freq: 0.006
+        transient_prob: 0.01
+        transient_mag: 1.2
+        transient_tau: 0.8
+        p_max: 12.0
+    noise:
+      model: drift
+      params:
+        step_sigma: 0.001
+        max_drift: 0.10
+    fault:
+      model: dropout
+      params:
+        probability: 0.015
+        mode: random
+        burst_length: 4
+
+  - id: hum_1
+    type: humidity
+    sampling_rate: 1.0
+    signal:
+      model: humidity
+      params:
+        base: 45.0
+        amplitude: 4.0
+        frequency: 0.0008
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.12
+    fault:
+      model: none
+      params: {}
+
+  - id: hum_2
+    type: humidity
+    sampling_rate: 1.0
+    signal:
+      model: humidity
+      params:
+        base: 57.0
+        amplitude: 6.0
+        frequency: 0.001
+    noise:
+      model: drift
+      params:
+        step_sigma: 0.004
+        max_drift: 0.8
+    fault:
+      model: scaling
+      params:
+        scale_factor: 1.03
+        activation_prob: 0.004
+
+  - id: hum_3
+    type: humidity
+    sampling_rate: 2.0
+    signal:
+      model: humidity
+      params:
+        base: 70.0
+        amplitude: 5.0
+        frequency: 0.0012
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.15
+    fault:
+      model: saturation
+      params:
+        lower_bound: 0.0
+        upper_bound: 100.0
+        activation_prob: 0.004
+
+  - id: sq_1
+    type: square_wave
+    sampling_rate: 5.0
+    signal:
+      model: square_wave
+      params:
+        period: 10.0
+        duty_cycle: 0.50
+    noise:
+      model: uniform
+      params:
+        amplitude: 0.02
+    fault:
+      model: none
+      params: {}
+
+  - id: sq_2
+    type: square_wave
+    sampling_rate: 10.0
+    signal:
+      model: square_wave
+      params:
+        period: 18.0
+        duty_cycle: 0.40
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.02
+    fault:
+      model: stuck
+      params:
+        stuck_prob: 0.003
+
+  - id: sq_3
+    type: square_wave
+    sampling_rate: 20.0
+    signal:
+      model: square_wave
+      params:
+        period: 6.0
+        duty_cycle: 0.70
+    noise:
+      model: impulse
+      params:
+        probability: 0.01
+        impulse_sigma: 0.05
+    fault:
+      model: dropout
+      params:
+        probability: 0.02
+        mode: burst
+        burst_length: 2
+
+  - id: ramp_1
+    type: ramp
+    sampling_rate: 2.0
+    signal:
+      model: ramp
+      params:
+        period: 20.0
+        low: 0.0
+        high: 45.0
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.06
+    fault:
+      model: none
+      params: {}
+
+  - id: ramp_2
+    type: ramp
+    sampling_rate: 5.0
+    signal:
+      model: ramp
+      params:
+        period: 30.0
+        low: 10.0
+        high: 75.0
+    noise:
+      model: drift
+      params:
+        step_sigma: 0.002
+        max_drift: 0.4
+    fault:
+      model: scaling
+      params:
+        scale_factor: 0.97
+        activation_prob: 0.004
+
+  - id: ramp_3
+    type: ramp
+    sampling_rate: 10.0
+    signal:
+      model: ramp
+      params:
+        period: 12.0
+        low: 5.0
+        high: 95.0
+    noise:
+      model: periodic
+      params:
+        amplitude: 0.04
+        frequency: 50.0
+        phase: 0.3
+    fault:
+      model: saturation
+      params:
+        lower_bound: 0.0
+        upper_bound: 90.0
+        activation_prob: 0.004
+
+  - id: step_1
+    type: step_response
+    sampling_rate: 2.0
+    signal:
+      model: step_response
+      params:
+        high: 60.0
+        low: 20.0
+        tau: 3.0
+        period: 18.0
+    noise:
+      model: gaussian
+      params:
+        sigma: 0.08
+    fault:
+      model: none
+      params: {}
+
+  - id: step_2
+    type: step_response
+    sampling_rate: 5.0
+    signal:
+      model: step_response
+      params:
+        high: 90.0
+        low: 30.0
+        tau: 5.0
+        period: 25.0
+    noise:
+      model: uniform
+      params:
+        amplitude: 0.06
+    fault:
+      model: drift
+      params:
+        activation_prob: 0.003
+        drift_rate: 0.015
+        max_drift: 1.5
+        exponent: 1.5
+
+  - id: step_3
+    type: step_response
+    sampling_rate: 10.0
+    signal:
+      model: step_response
+      params:
+        high: 75.0
+        low: 15.0
+        tau: 2.0
+        period: 12.0
+    noise:
+      model: impulse
+      params:
+        probability: 0.012
+        impulse_sigma: 0.15
+    fault:
+      model: dropout
+      params:
+        probability: 0.02
+        mode: random
+        burst_length: 4

@@ -96,8 +96,9 @@ edge: libedge_sensor.a
 edge: libedge_logger.a
 edge: libedge_runner.a
 edge: libedge_factory.a
-edge: libedge_sensor.a
+edge: libedge_config.a
 edge: libedge_logger.a
+edge: libedge_sensor.a
 edge: libedge_signal.a
 edge: libedge_noise.a
 edge: libedge_fault.a

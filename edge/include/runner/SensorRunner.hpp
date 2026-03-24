@@ -1,22 +1,27 @@
 #pragma once
 
-#include "sensor/Sensor.hpp"
 #include "logger/ILogger.hpp"
-#include <vector>
-#include <thread>
+#include "sensor/Sensor.hpp"
+
 #include <mutex>
+#include <thread>
+#include <vector>
 
-class SensorRunner{
-    public:
-        SensorRunner(std::vector<Sensor>& sensors, ILogger& logger);
+class SensorRunner {
+public:
+    SensorRunner(std::vector<Sensor>& sensors,
+                 ILogger& logger,
+                 double duration_seconds);
 
-        void run();
-    
-    private:
-        void worker(Sensor &sensor);
+    void run();
 
-        std::vector<Sensor>& sensors_;
-        ILogger& logger_;           // dipende dall'astrazione, non dal concreto
-        std::vector<std::thread> threads_;
-        std::mutex cout_mtx_;
+private:
+    void worker(Sensor& sensor);
+
+    std::vector<Sensor>& sensors_;
+    ILogger& logger_;
+    double duration_seconds_;
+
+    std::vector<std::thread> threads_;
+    std::mutex cout_mtx_;
 };

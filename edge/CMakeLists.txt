@@ -9,10 +9,11 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Dipendenza esterna per la configurazione YAML
+find_package(yaml-cpp REQUIRED)
+
 # =========================
 # INTERFACE LIBRARY — opzioni condivise da tutti i target
-# Chiunque si linki a "project_options" eredita standard e warning
-# senza doverli ridichiarare su ogni target
 # =========================
 add_library(project_options INTERFACE)
 
@@ -28,8 +29,6 @@ target_include_directories(project_options INTERFACE
 
 # =========================
 # HELPER MACRO
-# Evita di ripetere include_dirs e compile_options su ogni libreria.
-# Uso: make_edge_lib(<nome> <sorgenti...>)
 # =========================
 macro(make_edge_lib NAME)
     add_library(${NAME} ${ARGN})
@@ -86,19 +85,46 @@ make_edge_lib(edge_factory
     src/factory/SensorFactory.cpp
 )
 
-# Dipendenze esplicite tra librerie
-target_link_libraries(edge_sensor  PRIVATE edge_signal edge_noise edge_fault)
-target_link_libraries(edge_runner  PRIVATE edge_sensor edge_logger)
-target_link_libraries(edge_factory PRIVATE edge_signal edge_noise edge_fault)
+make_edge_lib(edge_config
+    src/config/ConfigLoader.cpp
+)
+
+# =========================
+# DIPENDENZE ESPLICITE
+# =========================
+target_link_libraries(edge_sensor PRIVATE
+    edge_signal
+    edge_noise
+    edge_fault
+)
+
+target_link_libraries(edge_runner PRIVATE
+    edge_sensor
+    edge_logger
+)
+
+target_link_libraries(edge_factory PRIVATE
+    edge_sensor
+    edge_signal
+    edge_noise
+    edge_fault
+)
+
+target_link_libraries(edge_config PRIVATE
+    yaml-cpp
+)
 
 # =========================
 # EXECUTABLE
 # =========================
-add_executable(edge src/main.cpp)
+add_executable(edge
+    src/main.cpp
+)
 
-target_link_libraries(edge
-    PRIVATE edge_sensor
-    PRIVATE edge_logger
-    PRIVATE edge_runner
-    PRIVATE edge_factory
+target_link_libraries(edge PRIVATE
+    edge_sensor
+    edge_logger
+    edge_runner
+    edge_factory
+    edge_config
 )

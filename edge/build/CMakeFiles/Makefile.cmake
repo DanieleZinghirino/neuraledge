@@ -10,6 +10,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/daniele/Work/neuraledge/edge/CMakeLists.txt"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/yaml-cpp-config-version.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/yaml-cpp-config.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/yaml-cpp-targets-none.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/yaml-cpp-targets.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake"
@@ -47,5 +51,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/edge_logger.dir/DependInfo.cmake"
   "CMakeFiles/edge_runner.dir/DependInfo.cmake"
   "CMakeFiles/edge_factory.dir/DependInfo.cmake"
+  "CMakeFiles/edge_config.dir/DependInfo.cmake"
   "CMakeFiles/edge.dir/DependInfo.cmake"
   )

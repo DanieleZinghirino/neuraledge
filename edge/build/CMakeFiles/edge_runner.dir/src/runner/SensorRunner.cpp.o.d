@@ -2,9 +2,7 @@ CMakeFiles/edge_runner.dir/src/runner/SensorRunner.cpp.o: \
  /home/daniele/Work/neuraledge/edge/src/runner/SensorRunner.cpp \
  /usr/include/stdc-predef.h \
  /home/daniele/Work/neuraledge/edge/include/runner/SensorRunner.hpp \
- /home/daniele/Work/neuraledge/edge/include/sensor/Sensor.hpp \
- /home/daniele/Work/neuraledge/edge/include/sensor/ISensor.hpp \
- /home/daniele/Work/neuraledge/edge/include/sensor/Sample.hpp \
+ /home/daniele/Work/neuraledge/edge/include/logger/ILogger.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -133,6 +131,9 @@ CMakeFiles/edge_runner.dir/src/runner/SensorRunner.cpp.o: \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/ranges_util.h \
+ /home/daniele/Work/neuraledge/edge/include/sensor/Sensor.hpp \
+ /home/daniele/Work/neuraledge/edge/include/sensor/ISensor.hpp \
+ /home/daniele/Work/neuraledge/edge/include/sensor/Sample.hpp \
  /home/daniele/Work/neuraledge/edge/include/sensor/../signal/ISignalModel.hpp \
  /home/daniele/Work/neuraledge/edge/include/sensor/../noise/INoiseModel.hpp \
  /home/daniele/Work/neuraledge/edge/include/sensor/../fault/IFaultModel.hpp \
@@ -215,22 +216,21 @@ CMakeFiles/edge_runner.dir/src/runner/SensorRunner.cpp.o: \
  /usr/include/c++/13/bits/ranges_uninitialized.h \
  /usr/include/c++/13/bits/ranges_algobase.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
- /usr/include/c++/13/pstl/execution_defs.h \
- /home/daniele/Work/neuraledge/edge/include/logger/ILogger.hpp \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/thread \
- /usr/include/c++/13/stop_token /usr/include/c++/13/atomic \
- /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/semaphore \
- /usr/include/c++/13/bits/semaphore_base.h \
+ /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/mutex \
  /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
  /usr/include/c++/13/limits /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/thread \
+ /usr/include/c++/13/stop_token /usr/include/c++/13/atomic \
+ /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/semaphore \
+ /usr/include/c++/13/bits/semaphore_base.h \
  /usr/include/c++/13/bits/atomic_timed_wait.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
- /usr/include/x86_64-linux-gnu/bits/semaphore.h /usr/include/c++/13/mutex \
- /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/chrono \
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/chrono \
  /usr/include/c++/13/sstream /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/bits/stl_algo.h \

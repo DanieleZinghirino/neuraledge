@@ -5,6 +5,7 @@
 /home/daniele/Work/neuraledge/edge/build/CMakeFiles/edge_logger.dir
 /home/daniele/Work/neuraledge/edge/build/CMakeFiles/edge_runner.dir
 /home/daniele/Work/neuraledge/edge/build/CMakeFiles/edge_factory.dir
+/home/daniele/Work/neuraledge/edge/build/CMakeFiles/edge_config.dir
 /home/daniele/Work/neuraledge/edge/build/CMakeFiles/edge.dir
 /home/daniele/Work/neuraledge/edge/build/CMakeFiles/edit_cache.dir
 /home/daniele/Work/neuraledge/edge/build/CMakeFiles/rebuild_cache.dir

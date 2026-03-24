@@ -1,0 +1,2 @@
+/usr/bin/ar qc libedge_config.a CMakeFiles/edge_config.dir/src/config/ConfigLoader.cpp.o
+/usr/bin/ranlib libedge_config.a
