@@ -263,4 +263,11 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: \
  /home/daniele/Work/neuraledge/edge/include/noise/DriftNoise.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/PeriodicNoise.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/ImpulseNoise.hpp \
- /home/daniele/Work/neuraledge/edge/include/fault/SpikeFault.hpp
+ /home/daniele/Work/neuraledge/edge/include/fault/SpikeFault.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/StuckFault.hpp \
+ /usr/include/c++/13/optional \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /home/daniele/Work/neuraledge/edge/include/fault/DriftFault.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/ScalingFault.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/SaturationFault.hpp \
+ /home/daniele/Work/neuraledge/edge/include/fault/DropoutFault.hpp

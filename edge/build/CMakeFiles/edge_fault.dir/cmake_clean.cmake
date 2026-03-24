@@ -1,8 +1,18 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o"
+  "CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o.d"
+  "CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o"
+  "CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o.d"
   "CMakeFiles/edge_fault.dir/src/fault/NoFault.cpp.o"
   "CMakeFiles/edge_fault.dir/src/fault/NoFault.cpp.o.d"
+  "CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o"
+  "CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o.d"
+  "CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o"
+  "CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o.d"
   "CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.o"
   "CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.o.d"
+  "CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o"
+  "CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o.d"
   "libedge_fault.a"
   "libedge_fault.pdb"
 )

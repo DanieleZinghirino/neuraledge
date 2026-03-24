@@ -244,6 +244,54 @@ src/factory/SensorFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_factory.dir/build.make CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.s
 .PHONY : src/factory/SensorFactory.cpp.s
 
+src/fault/DriftFault.o: src/fault/DriftFault.cpp.o
+.PHONY : src/fault/DriftFault.o
+
+# target to build an object file
+src/fault/DriftFault.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o
+.PHONY : src/fault/DriftFault.cpp.o
+
+src/fault/DriftFault.i: src/fault/DriftFault.cpp.i
+.PHONY : src/fault/DriftFault.i
+
+# target to preprocess a source file
+src/fault/DriftFault.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.i
+.PHONY : src/fault/DriftFault.cpp.i
+
+src/fault/DriftFault.s: src/fault/DriftFault.cpp.s
+.PHONY : src/fault/DriftFault.s
+
+# target to generate assembly for a file
+src/fault/DriftFault.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.s
+.PHONY : src/fault/DriftFault.cpp.s
+
+src/fault/DropoutFault.o: src/fault/DropoutFault.cpp.o
+.PHONY : src/fault/DropoutFault.o
+
+# target to build an object file
+src/fault/DropoutFault.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o
+.PHONY : src/fault/DropoutFault.cpp.o
+
+src/fault/DropoutFault.i: src/fault/DropoutFault.cpp.i
+.PHONY : src/fault/DropoutFault.i
+
+# target to preprocess a source file
+src/fault/DropoutFault.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.i
+.PHONY : src/fault/DropoutFault.cpp.i
+
+src/fault/DropoutFault.s: src/fault/DropoutFault.cpp.s
+.PHONY : src/fault/DropoutFault.s
+
+# target to generate assembly for a file
+src/fault/DropoutFault.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.s
+.PHONY : src/fault/DropoutFault.cpp.s
+
 src/fault/NoFault.o: src/fault/NoFault.cpp.o
 .PHONY : src/fault/NoFault.o
 
@@ -268,6 +316,54 @@ src/fault/NoFault.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/NoFault.cpp.s
 .PHONY : src/fault/NoFault.cpp.s
 
+src/fault/SaturationFault.o: src/fault/SaturationFault.cpp.o
+.PHONY : src/fault/SaturationFault.o
+
+# target to build an object file
+src/fault/SaturationFault.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o
+.PHONY : src/fault/SaturationFault.cpp.o
+
+src/fault/SaturationFault.i: src/fault/SaturationFault.cpp.i
+.PHONY : src/fault/SaturationFault.i
+
+# target to preprocess a source file
+src/fault/SaturationFault.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.i
+.PHONY : src/fault/SaturationFault.cpp.i
+
+src/fault/SaturationFault.s: src/fault/SaturationFault.cpp.s
+.PHONY : src/fault/SaturationFault.s
+
+# target to generate assembly for a file
+src/fault/SaturationFault.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.s
+.PHONY : src/fault/SaturationFault.cpp.s
+
+src/fault/ScalingFault.o: src/fault/ScalingFault.cpp.o
+.PHONY : src/fault/ScalingFault.o
+
+# target to build an object file
+src/fault/ScalingFault.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o
+.PHONY : src/fault/ScalingFault.cpp.o
+
+src/fault/ScalingFault.i: src/fault/ScalingFault.cpp.i
+.PHONY : src/fault/ScalingFault.i
+
+# target to preprocess a source file
+src/fault/ScalingFault.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.i
+.PHONY : src/fault/ScalingFault.cpp.i
+
+src/fault/ScalingFault.s: src/fault/ScalingFault.cpp.s
+.PHONY : src/fault/ScalingFault.s
+
+# target to generate assembly for a file
+src/fault/ScalingFault.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.s
+.PHONY : src/fault/ScalingFault.cpp.s
+
 src/fault/SpikeFault.o: src/fault/SpikeFault.cpp.o
 .PHONY : src/fault/SpikeFault.o
 
@@ -291,6 +387,30 @@ src/fault/SpikeFault.s: src/fault/SpikeFault.cpp.s
 src/fault/SpikeFault.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.s
 .PHONY : src/fault/SpikeFault.cpp.s
+
+src/fault/StuckFault.o: src/fault/StuckFault.cpp.o
+.PHONY : src/fault/StuckFault.o
+
+# target to build an object file
+src/fault/StuckFault.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o
+.PHONY : src/fault/StuckFault.cpp.o
+
+src/fault/StuckFault.i: src/fault/StuckFault.cpp.i
+.PHONY : src/fault/StuckFault.i
+
+# target to preprocess a source file
+src/fault/StuckFault.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.i
+.PHONY : src/fault/StuckFault.cpp.i
+
+src/fault/StuckFault.s: src/fault/StuckFault.cpp.s
+.PHONY : src/fault/StuckFault.s
+
+# target to generate assembly for a file
+src/fault/StuckFault.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_fault.dir/build.make CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.s
+.PHONY : src/fault/StuckFault.cpp.s
 
 src/logger/CsvLogger.o: src/logger/CsvLogger.cpp.o
 .PHONY : src/logger/CsvLogger.o
@@ -623,12 +743,27 @@ help:
 	@echo "... src/factory/SensorFactory.o"
 	@echo "... src/factory/SensorFactory.i"
 	@echo "... src/factory/SensorFactory.s"
+	@echo "... src/fault/DriftFault.o"
+	@echo "... src/fault/DriftFault.i"
+	@echo "... src/fault/DriftFault.s"
+	@echo "... src/fault/DropoutFault.o"
+	@echo "... src/fault/DropoutFault.i"
+	@echo "... src/fault/DropoutFault.s"
 	@echo "... src/fault/NoFault.o"
 	@echo "... src/fault/NoFault.i"
 	@echo "... src/fault/NoFault.s"
+	@echo "... src/fault/SaturationFault.o"
+	@echo "... src/fault/SaturationFault.i"
+	@echo "... src/fault/SaturationFault.s"
+	@echo "... src/fault/ScalingFault.o"
+	@echo "... src/fault/ScalingFault.i"
+	@echo "... src/fault/ScalingFault.s"
 	@echo "... src/fault/SpikeFault.o"
 	@echo "... src/fault/SpikeFault.i"
 	@echo "... src/fault/SpikeFault.s"
+	@echo "... src/fault/StuckFault.o"
+	@echo "... src/fault/StuckFault.i"
+	@echo "... src/fault/StuckFault.s"
 	@echo "... src/logger/CsvLogger.o"
 	@echo "... src/logger/CsvLogger.i"
 	@echo "... src/logger/CsvLogger.s"

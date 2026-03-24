@@ -97,19 +97,99 @@ CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/fault/SpikeFault.cpp -o CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.s
 
+CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o: CMakeFiles/edge_fault.dir/flags.make
+CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o: /home/daniele/Work/neuraledge/edge/src/fault/StuckFault.cpp
+CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o: CMakeFiles/edge_fault.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o -MF CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o.d -o CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o -c /home/daniele/Work/neuraledge/edge/src/fault/StuckFault.cpp
+
+CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/fault/StuckFault.cpp > CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.i
+
+CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/fault/StuckFault.cpp -o CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.s
+
+CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o: CMakeFiles/edge_fault.dir/flags.make
+CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o: /home/daniele/Work/neuraledge/edge/src/fault/DriftFault.cpp
+CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o: CMakeFiles/edge_fault.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o -MF CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o.d -o CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o -c /home/daniele/Work/neuraledge/edge/src/fault/DriftFault.cpp
+
+CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/fault/DriftFault.cpp > CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.i
+
+CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/fault/DriftFault.cpp -o CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.s
+
+CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o: CMakeFiles/edge_fault.dir/flags.make
+CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o: /home/daniele/Work/neuraledge/edge/src/fault/ScalingFault.cpp
+CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o: CMakeFiles/edge_fault.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o -MF CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o.d -o CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o -c /home/daniele/Work/neuraledge/edge/src/fault/ScalingFault.cpp
+
+CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/fault/ScalingFault.cpp > CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.i
+
+CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/fault/ScalingFault.cpp -o CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.s
+
+CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o: CMakeFiles/edge_fault.dir/flags.make
+CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o: /home/daniele/Work/neuraledge/edge/src/fault/SaturationFault.cpp
+CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o: CMakeFiles/edge_fault.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o -MF CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o.d -o CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o -c /home/daniele/Work/neuraledge/edge/src/fault/SaturationFault.cpp
+
+CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/fault/SaturationFault.cpp > CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.i
+
+CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/fault/SaturationFault.cpp -o CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.s
+
+CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o: CMakeFiles/edge_fault.dir/flags.make
+CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o: /home/daniele/Work/neuraledge/edge/src/fault/DropoutFault.cpp
+CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o: CMakeFiles/edge_fault.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o -MF CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o.d -o CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o -c /home/daniele/Work/neuraledge/edge/src/fault/DropoutFault.cpp
+
+CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/fault/DropoutFault.cpp > CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.i
+
+CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/fault/DropoutFault.cpp -o CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.s
+
 # Object files for target edge_fault
 edge_fault_OBJECTS = \
 "CMakeFiles/edge_fault.dir/src/fault/NoFault.cpp.o" \
-"CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.o"
+"CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.o" \
+"CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o" \
+"CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o" \
+"CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o" \
+"CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o" \
+"CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o"
 
 # External object files for target edge_fault
 edge_fault_EXTERNAL_OBJECTS =
 
 libedge_fault.a: CMakeFiles/edge_fault.dir/src/fault/NoFault.cpp.o
 libedge_fault.a: CMakeFiles/edge_fault.dir/src/fault/SpikeFault.cpp.o
+libedge_fault.a: CMakeFiles/edge_fault.dir/src/fault/StuckFault.cpp.o
+libedge_fault.a: CMakeFiles/edge_fault.dir/src/fault/DriftFault.cpp.o
+libedge_fault.a: CMakeFiles/edge_fault.dir/src/fault/ScalingFault.cpp.o
+libedge_fault.a: CMakeFiles/edge_fault.dir/src/fault/SaturationFault.cpp.o
+libedge_fault.a: CMakeFiles/edge_fault.dir/src/fault/DropoutFault.cpp.o
 libedge_fault.a: CMakeFiles/edge_fault.dir/build.make
 libedge_fault.a: CMakeFiles/edge_fault.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libedge_fault.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libedge_fault.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/edge_fault.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/edge_fault.dir/link.txt --verbose=$(VERBOSE)
 

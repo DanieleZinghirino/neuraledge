@@ -57,6 +57,11 @@ make_edge_lib(edge_noise
 make_edge_lib(edge_fault
     src/fault/NoFault.cpp
     src/fault/SpikeFault.cpp
+    src/fault/StuckFault.cpp
+    src/fault/DriftFault.cpp
+    src/fault/ScalingFault.cpp
+    src/fault/SaturationFault.cpp
+    src/fault/DropoutFault.cpp
 )
 
 make_edge_lib(edge_sensor
