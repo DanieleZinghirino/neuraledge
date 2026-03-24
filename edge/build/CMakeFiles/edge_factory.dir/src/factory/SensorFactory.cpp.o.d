@@ -256,13 +256,18 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: \
  /home/daniele/Work/neuraledge/edge/include/signal/TemperatureSignal.hpp \
  /home/daniele/Work/neuraledge/edge/include/signal/CurrentSignal.hpp \
  /home/daniele/Work/neuraledge/edge/include/signal/SpeedSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/VibrationSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/PressureSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/HumiditySignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/SquareWaveSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/RampSignal.hpp \
+ /home/daniele/Work/neuraledge/edge/include/signal/StepResponseSignal.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/GaussianNoise.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/UniformNoise.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/PinkNoise.hpp \
  /usr/include/c++/13/array \
  /home/daniele/Work/neuraledge/edge/include/noise/DriftNoise.hpp \
  /home/daniele/Work/neuraledge/edge/include/noise/PeriodicNoise.hpp \
- /home/daniele/Work/neuraledge/edge/include/noise/ImpulseNoise.hpp \
  /home/daniele/Work/neuraledge/edge/include/fault/SpikeFault.hpp \
  /home/daniele/Work/neuraledge/edge/include/fault/StuckFault.hpp \
  /usr/include/c++/13/optional \

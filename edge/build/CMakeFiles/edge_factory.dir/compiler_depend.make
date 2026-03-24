@@ -3,10 +3,14 @@
 
 CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/neuraledge/edge/src/factory/SensorFactory.cpp \
   /home/daniele/Work/neuraledge/edge/include/factory/SensorFactory.hpp \
+  /home/daniele/Work/neuraledge/edge/include/fault/DriftFault.hpp \
+  /home/daniele/Work/neuraledge/edge/include/fault/DropoutFault.hpp \
+  /home/daniele/Work/neuraledge/edge/include/fault/SaturationFault.hpp \
+  /home/daniele/Work/neuraledge/edge/include/fault/ScalingFault.hpp \
   /home/daniele/Work/neuraledge/edge/include/fault/SpikeFault.hpp \
+  /home/daniele/Work/neuraledge/edge/include/fault/StuckFault.hpp \
   /home/daniele/Work/neuraledge/edge/include/noise/DriftNoise.hpp \
   /home/daniele/Work/neuraledge/edge/include/noise/GaussianNoise.hpp \
-  /home/daniele/Work/neuraledge/edge/include/noise/ImpulseNoise.hpp \
   /home/daniele/Work/neuraledge/edge/include/noise/PeriodicNoise.hpp \
   /home/daniele/Work/neuraledge/edge/include/noise/PinkNoise.hpp \
   /home/daniele/Work/neuraledge/edge/include/noise/UniformNoise.hpp \
@@ -17,8 +21,14 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
   /home/daniele/Work/neuraledge/edge/include/sensor/Sample.hpp \
   /home/daniele/Work/neuraledge/edge/include/sensor/Sensor.hpp \
   /home/daniele/Work/neuraledge/edge/include/signal/CurrentSignal.hpp \
+  /home/daniele/Work/neuraledge/edge/include/signal/HumiditySignal.hpp \
+  /home/daniele/Work/neuraledge/edge/include/signal/PressureSignal.hpp \
+  /home/daniele/Work/neuraledge/edge/include/signal/RampSignal.hpp \
   /home/daniele/Work/neuraledge/edge/include/signal/SpeedSignal.hpp \
+  /home/daniele/Work/neuraledge/edge/include/signal/SquareWaveSignal.hpp \
+  /home/daniele/Work/neuraledge/edge/include/signal/StepResponseSignal.hpp \
   /home/daniele/Work/neuraledge/edge/include/signal/TemperatureSignal.hpp \
+  /home/daniele/Work/neuraledge/edge/include/signal/VibrationSignal.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -43,6 +53,7 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
@@ -144,6 +155,7 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
   /usr/include/c++/13/numeric \
+  /usr/include/c++/13/optional \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_memory_defs.h \
@@ -377,21 +389,17 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/include/c++/13/debug/assertions.h:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/select-decl.h:
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
-/usr/include/c++/13/cstdlib:
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
-/usr/include/c++/13/cstdint:
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/include/c++/13/cstdio:
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/c++/13/concepts:
-
-/usr/include/c++/13/memory:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
+/usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/x86_64-linux-gnu/sys/syscall.h:
 
@@ -402,10 +410,6 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 /usr/include/c++/13/bits/atomic_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/c++/13/bits/stl_pair.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/c++/13/bits/uses_allocator.h:
 
@@ -435,11 +439,11 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/bits/stl_numeric.h:
 
-/home/daniele/Work/neuraledge/edge/include/sensor/Sample.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
 /usr/include/asm-generic/errno.h:
+
+/home/daniele/Work/neuraledge/edge/include/sensor/Sample.hpp:
 
 /usr/include/syscall.h:
 
@@ -469,8 +473,6 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/bits/refwrap.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/tr1/beta_function.tcc:
@@ -482,10 +484,6 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 /usr/include/c++/13/ext/atomicity.h:
 
 /usr/include/c++/13/tr1/gamma.tcc:
-
-/usr/include/c++/13/exception:
-
-/usr/include/c++/13/pstl/glue_memory_defs.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
@@ -499,49 +497,69 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
-/usr/include/c++/13/bits/ostream.tcc:
-
 /usr/include/c++/13/numbers:
-
-/usr/include/c++/13/cwctype:
-
-/home/daniele/Work/neuraledge/edge/include/signal/CurrentSignal.hpp:
 
 /usr/include/c++/13/bits/move.h:
 
-/usr/include/c++/13/backward/binders.h:
-
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/c++/13/pstl/execution_defs.h:
-
-/usr/include/c++/13/bits/alloc_traits.h:
-
-/usr/include/c++/13/bits/concept_check.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/13/bits/node_handle.h:
-
 /usr/include/c++/13/cerrno:
+
+/home/daniele/Work/neuraledge/edge/include/fault/DriftFault.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
-/home/daniele/Work/neuraledge/edge/include/signal/TemperatureSignal.hpp:
+/usr/include/c++/13/bits/locale_facets.h:
 
-/usr/include/c++/13/bits/vector.tcc:
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/c++/13/bits/locale_classes.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/13/bits/stl_tree.h:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/bits/iterator_concepts.h:
+
+/usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/c++/13/bits/invoke.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
 
-/usr/include/c++/13/bits/predefined_ops.h:
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-/usr/include/c++/13/bits/ranges_cmp.h:
+/usr/include/math.h:
 
-/usr/include/c++/13/iosfwd:
+/home/daniele/Work/neuraledge/edge/include/signal/VibrationSignal.hpp:
 
-/home/daniele/Work/neuraledge/edge/include/noise/PinkNoise.hpp:
+/usr/include/c++/13/pstl/glue_memory_defs.h:
+
+/usr/include/c++/13/exception:
+
+/usr/include/c++/13/bits/streambuf.tcc:
+
+/usr/include/c++/13/bits/specfun.h:
+
+/usr/include/c++/13/bits/basic_string.h:
+
+/usr/include/c++/13/tr1/poly_laguerre.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/home/daniele/Work/neuraledge/edge/include/noise/DriftNoise.hpp:
+
+/usr/include/c++/13/cctype:
+
+/home/daniele/Work/neuraledge/edge/include/noise/UniformNoise.hpp:
 
 /usr/include/c++/13/ext/type_traits.h:
 
@@ -553,15 +571,13 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
-/usr/include/x86_64-linux-gnu/bits/types.h:
+/home/daniele/Work/neuraledge/edge/include/signal/StepResponseSignal.hpp:
 
-/home/daniele/Work/neuraledge/edge/src/factory/SensorFactory.cpp:
+/home/daniele/Work/neuraledge/edge/include/signal/HumiditySignal.hpp:
 
-/usr/include/c++/13/bits/charconv.h:
+/usr/include/c++/13/bits/basic_ios.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/c++/13/bits/ios_base.h:
+/usr/include/c++/13/pstl/execution_defs.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
@@ -573,21 +589,17 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 
-/usr/include/c++/13/cctype:
+/home/daniele/Work/neuraledge/edge/include/fault/IFaultModel.hpp:
 
-/home/daniele/Work/neuraledge/edge/include/noise/UniformNoise.hpp:
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
 
-/usr/include/c++/13/compare:
+/home/daniele/Work/neuraledge/edge/include/noise/PeriodicNoise.hpp:
 
-/usr/include/c++/13/system_error:
+/home/daniele/Work/neuraledge/edge/src/factory/SensorFactory.cpp:
 
-/usr/include/c++/13/bits/string_view.tcc:
+/home/daniele/Work/neuraledge/edge/include/sensor/ISensor.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/home/daniele/Work/neuraledge/edge/include/factory/SensorFactory.hpp:
-
-/usr/include/c++/13/bits/memoryfwd.h:
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
@@ -595,35 +607,69 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/bits/stl_multimap.h:
 
-/home/daniele/Work/neuraledge/edge/include/noise/GaussianNoise.hpp:
+/usr/include/c++/13/bits/memoryfwd.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+/home/daniele/Work/neuraledge/edge/include/factory/SensorFactory.hpp:
 
-/home/daniele/Work/neuraledge/edge/include/fault/IFaultModel.hpp:
+/usr/include/c++/13/bits/string_view.tcc:
 
-/usr/include/c++/13/bits/shared_ptr_atomic.h:
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
-/home/daniele/Work/neuraledge/edge/include/noise/PeriodicNoise.hpp:
+/home/daniele/Work/neuraledge/edge/include/fault/SpikeFault.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
+/usr/include/c++/13/ext/string_conversions.h:
 
-/usr/include/c++/13/cwchar:
+/usr/include/c++/13/bits/vector.tcc:
+
+/usr/include/c++/13/optional:
+
+/home/daniele/Work/neuraledge/edge/include/signal/TemperatureSignal.hpp:
+
+/home/daniele/Work/neuraledge/edge/include/fault/StuckFault.hpp:
+
+/home/daniele/Work/neuraledge/edge/include/noise/PinkNoise.hpp:
+
+/usr/include/c++/13/bits/predefined_ops.h:
+
+/usr/include/c++/13/bits/ranges_cmp.h:
+
+/usr/include/c++/13/iosfwd:
+
+/usr/include/c++/13/bits/hash_bytes.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/c++/13/bits/ranges_util.h:
+
+/usr/include/c++/13/array:
 
 /usr/include/c++/13/backward/auto_ptr.h:
 
-/home/daniele/Work/neuraledge/edge/include/sensor/ISensor.hpp:
+/home/daniele/Work/neuraledge/edge/include/signal/PressureSignal.hpp:
 
-/usr/include/c++/13/debug/debug.h:
+/usr/include/c++/13/pstl/pstl_config.h:
 
-/usr/include/linux/errno.h:
+/usr/include/c++/13/backward/binders.h:
 
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+/usr/include/c++/13/bits/uniform_int_dist.h:
 
-/usr/include/c++/13/bits/stl_tree.h:
+/usr/include/c++/13/bits/locale_classes.tcc:
 
-/usr/include/c++/13/bits/stringfwd.h:
+/home/daniele/Work/neuraledge/edge/include/noise/GaussianNoise.hpp:
 
-/usr/include/c++/13/bits/iterator_concepts.h:
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/concept_check.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/13/bits/node_handle.h:
 
 /usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
@@ -637,23 +683,29 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
-/usr/include/c++/13/bits/locale_facets.h:
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/c++/13/bits/charconv.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/13/bits/stl_pair.h:
+
+/usr/include/c++/13/cstdio:
+
+/usr/include/wchar.h:
+
+/usr/include/c++/13/bits/shared_ptr_base.h:
+
+/usr/include/c++/13/bits/ostream.tcc:
+
+/home/daniele/Work/neuraledge/edge/include/fault/ScalingFault.hpp:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
-/usr/include/c++/13/bits/specfun.h:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/c++/13/tr1/poly_laguerre.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
 /usr/include/alloca.h:
+
+/home/daniele/Work/neuraledge/edge/include/fault/DropoutFault.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
 
@@ -661,19 +713,17 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
-/usr/include/c++/13/cstddef:
+/usr/include/c++/13/bits/exception.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+/usr/include/c++/13/bits/memory_resource.h:
 
-/usr/include/c++/13/bits/ranges_util.h:
+/usr/include/c++/13/streambuf:
 
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/asm-generic/errno-base.h:
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
-/home/daniele/Work/neuraledge/edge/include/noise/DriftNoise.hpp:
+/usr/include/c++/13/typeinfo:
 
 /usr/include/c++/13/bits/localefwd.h:
 
@@ -681,53 +731,55 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
+/home/daniele/Work/neuraledge/edge/include/signal/CurrentSignal.hpp:
 
-/usr/include/c++/13/typeinfo:
+/usr/include/c++/13/cwctype:
 
-/usr/include/c++/13/bits/exception.h:
+/home/daniele/Work/neuraledge/edge/include/signal/SquareWaveSignal.hpp:
 
-/home/daniele/Work/neuraledge/edge/include/noise/ImpulseNoise.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/c++/13/limits:
 
 /usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/errno.h:
 
-/usr/include/c++/13/array:
+/usr/include/c++/13/system_error:
 
-/usr/include/c++/13/bits/hash_bytes.h:
+/usr/include/c++/13/compare:
 
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+/usr/include/c++/13/concepts:
 
-/usr/include/c++/13/bits/uniform_int_dist.h:
+/usr/include/c++/13/memory:
 
-/usr/include/c++/13/bits/locale_classes.tcc:
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/home/daniele/Work/neuraledge/edge/include/fault/SpikeFault.hpp:
+/usr/include/c++/13/cstddef:
 
-/usr/include/c++/13/ext/string_conversions.h:
+/usr/include/c++/13/cstdint:
 
-/usr/include/c++/13/bits/invoke.h:
+/usr/include/c++/13/cstdlib:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/x86_64-linux-gnu/bits/environments.h:
+/usr/include/c++/13/cwchar:
 
-/usr/include/c++/13/streambuf:
+/usr/include/c++/13/debug/assertions.h:
 
-/usr/include/c++/13/bits/memory_resource.h:
+/usr/include/x86_64-linux-gnu/bits/select-decl.h:
 
-/usr/include/c++/13/bits/shared_ptr_base.h:
+/usr/include/linux/errno.h:
 
-/usr/include/wchar.h:
+/usr/include/c++/13/debug/debug.h:
 
 /usr/include/c++/13/ext/aligned_buffer.h:
 
 /usr/include/locale.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/home/daniele/Work/neuraledge/edge/include/fault/SaturationFault.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
@@ -745,10 +797,6 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/ios:
 
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/c++/13/limits:
-
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
 /home/daniele/Work/neuraledge/edge/include/sensor/Sensor.hpp:
@@ -762,8 +810,6 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 /usr/include/c++/13/bits/random.tcc:
 
 /usr/include/c++/13/random:
-
-/usr/include/c++/13/pstl/pstl_config.h:
 
 /usr/include/c++/13/stdexcept:
 
@@ -801,6 +847,8 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/c++/13/tr1/special_function_util.h:
 
+/home/daniele/Work/neuraledge/edge/include/signal/RampSignal.hpp:
+
 /usr/include/stdc-predef.h:
 
 /usr/include/c++/13/bits/nested_exception.h:
@@ -822,6 +870,8 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 /usr/include/endian.h:
 
 /usr/include/stdint.h:
+
+/usr/include/c++/13/bits/enable_special_members.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
@@ -893,6 +943,10 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
 /usr/include/c++/13/cmath:
 
 /home/daniele/Work/neuraledge/edge/include/signal/ISignalModel.hpp:
@@ -905,8 +959,6 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
 
 /usr/include/c++/13/bits/ptr_traits.h:
@@ -915,26 +967,10 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o: /home/daniele/Work/
 
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /home/daniele/Work/neuraledge/edge/include/signal/SpeedSignal.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/time.h:
-
-/usr/include/c++/13/bits/locale_classes.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/math.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:

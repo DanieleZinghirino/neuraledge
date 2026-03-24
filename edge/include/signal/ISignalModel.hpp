@@ -21,7 +21,7 @@ class ISignalModel {
          * @param t tempo generato.
          * @return valore ideale del segnale (senza rumore).
          */
-        virtual double generate(double t) = 0;
+        virtual double generate(double t) const = 0;
 
         virtual std::string typeName() const = 0;
 

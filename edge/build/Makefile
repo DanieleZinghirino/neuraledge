@@ -676,6 +676,78 @@ src/signal/CurrentSignal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/CurrentSignal.cpp.s
 .PHONY : src/signal/CurrentSignal.cpp.s
 
+src/signal/HumiditySignal.o: src/signal/HumiditySignal.cpp.o
+.PHONY : src/signal/HumiditySignal.o
+
+# target to build an object file
+src/signal/HumiditySignal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o
+.PHONY : src/signal/HumiditySignal.cpp.o
+
+src/signal/HumiditySignal.i: src/signal/HumiditySignal.cpp.i
+.PHONY : src/signal/HumiditySignal.i
+
+# target to preprocess a source file
+src/signal/HumiditySignal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.i
+.PHONY : src/signal/HumiditySignal.cpp.i
+
+src/signal/HumiditySignal.s: src/signal/HumiditySignal.cpp.s
+.PHONY : src/signal/HumiditySignal.s
+
+# target to generate assembly for a file
+src/signal/HumiditySignal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.s
+.PHONY : src/signal/HumiditySignal.cpp.s
+
+src/signal/PressureSignal.o: src/signal/PressureSignal.cpp.o
+.PHONY : src/signal/PressureSignal.o
+
+# target to build an object file
+src/signal/PressureSignal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o
+.PHONY : src/signal/PressureSignal.cpp.o
+
+src/signal/PressureSignal.i: src/signal/PressureSignal.cpp.i
+.PHONY : src/signal/PressureSignal.i
+
+# target to preprocess a source file
+src/signal/PressureSignal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.i
+.PHONY : src/signal/PressureSignal.cpp.i
+
+src/signal/PressureSignal.s: src/signal/PressureSignal.cpp.s
+.PHONY : src/signal/PressureSignal.s
+
+# target to generate assembly for a file
+src/signal/PressureSignal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.s
+.PHONY : src/signal/PressureSignal.cpp.s
+
+src/signal/RampSignal.o: src/signal/RampSignal.cpp.o
+.PHONY : src/signal/RampSignal.o
+
+# target to build an object file
+src/signal/RampSignal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o
+.PHONY : src/signal/RampSignal.cpp.o
+
+src/signal/RampSignal.i: src/signal/RampSignal.cpp.i
+.PHONY : src/signal/RampSignal.i
+
+# target to preprocess a source file
+src/signal/RampSignal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.i
+.PHONY : src/signal/RampSignal.cpp.i
+
+src/signal/RampSignal.s: src/signal/RampSignal.cpp.s
+.PHONY : src/signal/RampSignal.s
+
+# target to generate assembly for a file
+src/signal/RampSignal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.s
+.PHONY : src/signal/RampSignal.cpp.s
+
 src/signal/SpeedSignal.o: src/signal/SpeedSignal.cpp.o
 .PHONY : src/signal/SpeedSignal.o
 
@@ -700,6 +772,54 @@ src/signal/SpeedSignal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/SpeedSignal.cpp.s
 .PHONY : src/signal/SpeedSignal.cpp.s
 
+src/signal/SquareWaveSignal.o: src/signal/SquareWaveSignal.cpp.o
+.PHONY : src/signal/SquareWaveSignal.o
+
+# target to build an object file
+src/signal/SquareWaveSignal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o
+.PHONY : src/signal/SquareWaveSignal.cpp.o
+
+src/signal/SquareWaveSignal.i: src/signal/SquareWaveSignal.cpp.i
+.PHONY : src/signal/SquareWaveSignal.i
+
+# target to preprocess a source file
+src/signal/SquareWaveSignal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.i
+.PHONY : src/signal/SquareWaveSignal.cpp.i
+
+src/signal/SquareWaveSignal.s: src/signal/SquareWaveSignal.cpp.s
+.PHONY : src/signal/SquareWaveSignal.s
+
+# target to generate assembly for a file
+src/signal/SquareWaveSignal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.s
+.PHONY : src/signal/SquareWaveSignal.cpp.s
+
+src/signal/StepResponseSignal.o: src/signal/StepResponseSignal.cpp.o
+.PHONY : src/signal/StepResponseSignal.o
+
+# target to build an object file
+src/signal/StepResponseSignal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o
+.PHONY : src/signal/StepResponseSignal.cpp.o
+
+src/signal/StepResponseSignal.i: src/signal/StepResponseSignal.cpp.i
+.PHONY : src/signal/StepResponseSignal.i
+
+# target to preprocess a source file
+src/signal/StepResponseSignal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.i
+.PHONY : src/signal/StepResponseSignal.cpp.i
+
+src/signal/StepResponseSignal.s: src/signal/StepResponseSignal.cpp.s
+.PHONY : src/signal/StepResponseSignal.s
+
+# target to generate assembly for a file
+src/signal/StepResponseSignal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.s
+.PHONY : src/signal/StepResponseSignal.cpp.s
+
 src/signal/TemperatureSignal.o: src/signal/TemperatureSignal.cpp.o
 .PHONY : src/signal/TemperatureSignal.o
 
@@ -723,6 +843,30 @@ src/signal/TemperatureSignal.s: src/signal/TemperatureSignal.cpp.s
 src/signal/TemperatureSignal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/TemperatureSignal.cpp.s
 .PHONY : src/signal/TemperatureSignal.cpp.s
+
+src/signal/VibrationSignal.o: src/signal/VibrationSignal.cpp.o
+.PHONY : src/signal/VibrationSignal.o
+
+# target to build an object file
+src/signal/VibrationSignal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o
+.PHONY : src/signal/VibrationSignal.cpp.o
+
+src/signal/VibrationSignal.i: src/signal/VibrationSignal.cpp.i
+.PHONY : src/signal/VibrationSignal.i
+
+# target to preprocess a source file
+src/signal/VibrationSignal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.i
+.PHONY : src/signal/VibrationSignal.cpp.i
+
+src/signal/VibrationSignal.s: src/signal/VibrationSignal.cpp.s
+.PHONY : src/signal/VibrationSignal.s
+
+# target to generate assembly for a file
+src/signal/VibrationSignal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.s
+.PHONY : src/signal/VibrationSignal.cpp.s
 
 # Help Target
 help:
@@ -797,12 +941,30 @@ help:
 	@echo "... src/signal/CurrentSignal.o"
 	@echo "... src/signal/CurrentSignal.i"
 	@echo "... src/signal/CurrentSignal.s"
+	@echo "... src/signal/HumiditySignal.o"
+	@echo "... src/signal/HumiditySignal.i"
+	@echo "... src/signal/HumiditySignal.s"
+	@echo "... src/signal/PressureSignal.o"
+	@echo "... src/signal/PressureSignal.i"
+	@echo "... src/signal/PressureSignal.s"
+	@echo "... src/signal/RampSignal.o"
+	@echo "... src/signal/RampSignal.i"
+	@echo "... src/signal/RampSignal.s"
 	@echo "... src/signal/SpeedSignal.o"
 	@echo "... src/signal/SpeedSignal.i"
 	@echo "... src/signal/SpeedSignal.s"
+	@echo "... src/signal/SquareWaveSignal.o"
+	@echo "... src/signal/SquareWaveSignal.i"
+	@echo "... src/signal/SquareWaveSignal.s"
+	@echo "... src/signal/StepResponseSignal.o"
+	@echo "... src/signal/StepResponseSignal.i"
+	@echo "... src/signal/StepResponseSignal.s"
 	@echo "... src/signal/TemperatureSignal.o"
 	@echo "... src/signal/TemperatureSignal.i"
 	@echo "... src/signal/TemperatureSignal.s"
+	@echo "... src/signal/VibrationSignal.o"
+	@echo "... src/signal/VibrationSignal.i"
+	@echo "... src/signal/VibrationSignal.s"
 .PHONY : help
 
 

@@ -95,12 +95,12 @@ clean: CMakeFiles/edge.dir/clean
 CMakeFiles/edge_signal.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_signal.dir/build.make CMakeFiles/edge_signal.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=26,27,28,29 "Built target edge_signal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=26,27,28,29,30,31,32,33,34,35 "Built target edge_signal"
 .PHONY : CMakeFiles/edge_signal.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/edge_signal.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/edge_signal.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 0
 .PHONY : CMakeFiles/edge_signal.dir/rule
@@ -180,7 +180,7 @@ CMakeFiles/edge_sensor.dir/all: CMakeFiles/edge_fault.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/edge_sensor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/edge_sensor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 0
 .PHONY : CMakeFiles/edge_sensor.dir/rule
@@ -236,7 +236,7 @@ CMakeFiles/edge_runner.dir/all: CMakeFiles/edge_logger.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/edge_runner.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/edge_runner.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 0
 .PHONY : CMakeFiles/edge_runner.dir/rule
@@ -264,7 +264,7 @@ CMakeFiles/edge_factory.dir/all: CMakeFiles/edge_fault.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/edge_factory.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/edge_factory.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 0
 .PHONY : CMakeFiles/edge_factory.dir/rule
@@ -296,7 +296,7 @@ CMakeFiles/edge.dir/all: CMakeFiles/edge_factory.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/edge.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 29
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/edge.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniele/Work/neuraledge/edge/build/CMakeFiles 0
 .PHONY : CMakeFiles/edge.dir/rule

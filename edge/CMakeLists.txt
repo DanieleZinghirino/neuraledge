@@ -43,6 +43,12 @@ make_edge_lib(edge_signal
     src/signal/TemperatureSignal.cpp
     src/signal/CurrentSignal.cpp
     src/signal/SpeedSignal.cpp
+    src/signal/VibrationSignal.cpp
+    src/signal/PressureSignal.cpp
+    src/signal/HumiditySignal.cpp
+    src/signal/SquareWaveSignal.cpp
+    src/signal/RampSignal.cpp
+    src/signal/StepResponseSignal.cpp
 )
 
 make_edge_lib(edge_noise

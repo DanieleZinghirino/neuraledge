@@ -111,11 +111,101 @@ CMakeFiles/edge_signal.dir/src/signal/SpeedSignal.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_signal.dir/src/signal/SpeedSignal.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/signal/SpeedSignal.cpp -o CMakeFiles/edge_signal.dir/src/signal/SpeedSignal.cpp.s
 
+CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o: CMakeFiles/edge_signal.dir/flags.make
+CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o: /home/daniele/Work/neuraledge/edge/src/signal/VibrationSignal.cpp
+CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o: CMakeFiles/edge_signal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o -MF CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o.d -o CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o -c /home/daniele/Work/neuraledge/edge/src/signal/VibrationSignal.cpp
+
+CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/signal/VibrationSignal.cpp > CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.i
+
+CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/signal/VibrationSignal.cpp -o CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.s
+
+CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o: CMakeFiles/edge_signal.dir/flags.make
+CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o: /home/daniele/Work/neuraledge/edge/src/signal/PressureSignal.cpp
+CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o: CMakeFiles/edge_signal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o -MF CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o.d -o CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o -c /home/daniele/Work/neuraledge/edge/src/signal/PressureSignal.cpp
+
+CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/signal/PressureSignal.cpp > CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.i
+
+CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/signal/PressureSignal.cpp -o CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.s
+
+CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o: CMakeFiles/edge_signal.dir/flags.make
+CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o: /home/daniele/Work/neuraledge/edge/src/signal/HumiditySignal.cpp
+CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o: CMakeFiles/edge_signal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o -MF CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o.d -o CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o -c /home/daniele/Work/neuraledge/edge/src/signal/HumiditySignal.cpp
+
+CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/signal/HumiditySignal.cpp > CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.i
+
+CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/signal/HumiditySignal.cpp -o CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.s
+
+CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o: CMakeFiles/edge_signal.dir/flags.make
+CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o: /home/daniele/Work/neuraledge/edge/src/signal/SquareWaveSignal.cpp
+CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o: CMakeFiles/edge_signal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o -MF CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o.d -o CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o -c /home/daniele/Work/neuraledge/edge/src/signal/SquareWaveSignal.cpp
+
+CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/signal/SquareWaveSignal.cpp > CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.i
+
+CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/signal/SquareWaveSignal.cpp -o CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.s
+
+CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o: CMakeFiles/edge_signal.dir/flags.make
+CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o: /home/daniele/Work/neuraledge/edge/src/signal/RampSignal.cpp
+CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o: CMakeFiles/edge_signal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o -MF CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o.d -o CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o -c /home/daniele/Work/neuraledge/edge/src/signal/RampSignal.cpp
+
+CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/signal/RampSignal.cpp > CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.i
+
+CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/signal/RampSignal.cpp -o CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.s
+
+CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o: CMakeFiles/edge_signal.dir/flags.make
+CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o: /home/daniele/Work/neuraledge/edge/src/signal/StepResponseSignal.cpp
+CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o: CMakeFiles/edge_signal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o -MF CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o.d -o CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o -c /home/daniele/Work/neuraledge/edge/src/signal/StepResponseSignal.cpp
+
+CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/signal/StepResponseSignal.cpp > CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.i
+
+CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/signal/StepResponseSignal.cpp -o CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.s
+
 # Object files for target edge_signal
 edge_signal_OBJECTS = \
 "CMakeFiles/edge_signal.dir/src/signal/TemperatureSignal.cpp.o" \
 "CMakeFiles/edge_signal.dir/src/signal/CurrentSignal.cpp.o" \
-"CMakeFiles/edge_signal.dir/src/signal/SpeedSignal.cpp.o"
+"CMakeFiles/edge_signal.dir/src/signal/SpeedSignal.cpp.o" \
+"CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o" \
+"CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o" \
+"CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o" \
+"CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o" \
+"CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o" \
+"CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o"
 
 # External object files for target edge_signal
 edge_signal_EXTERNAL_OBJECTS =
@@ -123,9 +213,15 @@ edge_signal_EXTERNAL_OBJECTS =
 libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/TemperatureSignal.cpp.o
 libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/CurrentSignal.cpp.o
 libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/SpeedSignal.cpp.o
+libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/VibrationSignal.cpp.o
+libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/PressureSignal.cpp.o
+libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/HumiditySignal.cpp.o
+libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/SquareWaveSignal.cpp.o
+libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/RampSignal.cpp.o
+libedge_signal.a: CMakeFiles/edge_signal.dir/src/signal/StepResponseSignal.cpp.o
 libedge_signal.a: CMakeFiles/edge_signal.dir/build.make
 libedge_signal.a: CMakeFiles/edge_signal.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libedge_signal.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libedge_signal.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/edge_signal.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/edge_signal.dir/link.txt --verbose=$(VERBOSE)
 
