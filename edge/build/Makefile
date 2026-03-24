@@ -340,6 +340,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/noise/DriftNoise.o: src/noise/DriftNoise.cpp.o
+.PHONY : src/noise/DriftNoise.o
+
+# target to build an object file
+src/noise/DriftNoise.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o
+.PHONY : src/noise/DriftNoise.cpp.o
+
+src/noise/DriftNoise.i: src/noise/DriftNoise.cpp.i
+.PHONY : src/noise/DriftNoise.i
+
+# target to preprocess a source file
+src/noise/DriftNoise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.i
+.PHONY : src/noise/DriftNoise.cpp.i
+
+src/noise/DriftNoise.s: src/noise/DriftNoise.cpp.s
+.PHONY : src/noise/DriftNoise.s
+
+# target to generate assembly for a file
+src/noise/DriftNoise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.s
+.PHONY : src/noise/DriftNoise.cpp.s
+
 src/noise/GaussianNoise.o: src/noise/GaussianNoise.cpp.o
 .PHONY : src/noise/GaussianNoise.o
 
@@ -363,6 +387,102 @@ src/noise/GaussianNoise.s: src/noise/GaussianNoise.cpp.s
 src/noise/GaussianNoise.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/GaussianNoise.cpp.s
 .PHONY : src/noise/GaussianNoise.cpp.s
+
+src/noise/ImpulseNoise.o: src/noise/ImpulseNoise.cpp.o
+.PHONY : src/noise/ImpulseNoise.o
+
+# target to build an object file
+src/noise/ImpulseNoise.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o
+.PHONY : src/noise/ImpulseNoise.cpp.o
+
+src/noise/ImpulseNoise.i: src/noise/ImpulseNoise.cpp.i
+.PHONY : src/noise/ImpulseNoise.i
+
+# target to preprocess a source file
+src/noise/ImpulseNoise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.i
+.PHONY : src/noise/ImpulseNoise.cpp.i
+
+src/noise/ImpulseNoise.s: src/noise/ImpulseNoise.cpp.s
+.PHONY : src/noise/ImpulseNoise.s
+
+# target to generate assembly for a file
+src/noise/ImpulseNoise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.s
+.PHONY : src/noise/ImpulseNoise.cpp.s
+
+src/noise/PeriodicNoise.o: src/noise/PeriodicNoise.cpp.o
+.PHONY : src/noise/PeriodicNoise.o
+
+# target to build an object file
+src/noise/PeriodicNoise.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o
+.PHONY : src/noise/PeriodicNoise.cpp.o
+
+src/noise/PeriodicNoise.i: src/noise/PeriodicNoise.cpp.i
+.PHONY : src/noise/PeriodicNoise.i
+
+# target to preprocess a source file
+src/noise/PeriodicNoise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.i
+.PHONY : src/noise/PeriodicNoise.cpp.i
+
+src/noise/PeriodicNoise.s: src/noise/PeriodicNoise.cpp.s
+.PHONY : src/noise/PeriodicNoise.s
+
+# target to generate assembly for a file
+src/noise/PeriodicNoise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.s
+.PHONY : src/noise/PeriodicNoise.cpp.s
+
+src/noise/PinkNoise.o: src/noise/PinkNoise.cpp.o
+.PHONY : src/noise/PinkNoise.o
+
+# target to build an object file
+src/noise/PinkNoise.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o
+.PHONY : src/noise/PinkNoise.cpp.o
+
+src/noise/PinkNoise.i: src/noise/PinkNoise.cpp.i
+.PHONY : src/noise/PinkNoise.i
+
+# target to preprocess a source file
+src/noise/PinkNoise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.i
+.PHONY : src/noise/PinkNoise.cpp.i
+
+src/noise/PinkNoise.s: src/noise/PinkNoise.cpp.s
+.PHONY : src/noise/PinkNoise.s
+
+# target to generate assembly for a file
+src/noise/PinkNoise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.s
+.PHONY : src/noise/PinkNoise.cpp.s
+
+src/noise/UniformNoise.o: src/noise/UniformNoise.cpp.o
+.PHONY : src/noise/UniformNoise.o
+
+# target to build an object file
+src/noise/UniformNoise.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o
+.PHONY : src/noise/UniformNoise.cpp.o
+
+src/noise/UniformNoise.i: src/noise/UniformNoise.cpp.i
+.PHONY : src/noise/UniformNoise.i
+
+# target to preprocess a source file
+src/noise/UniformNoise.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.i
+.PHONY : src/noise/UniformNoise.cpp.i
+
+src/noise/UniformNoise.s: src/noise/UniformNoise.cpp.s
+.PHONY : src/noise/UniformNoise.s
+
+# target to generate assembly for a file
+src/noise/UniformNoise.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge_noise.dir/build.make CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.s
+.PHONY : src/noise/UniformNoise.cpp.s
 
 src/runner/SensorRunner.o: src/runner/SensorRunner.cpp.o
 .PHONY : src/runner/SensorRunner.o
@@ -515,9 +635,24 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/noise/DriftNoise.o"
+	@echo "... src/noise/DriftNoise.i"
+	@echo "... src/noise/DriftNoise.s"
 	@echo "... src/noise/GaussianNoise.o"
 	@echo "... src/noise/GaussianNoise.i"
 	@echo "... src/noise/GaussianNoise.s"
+	@echo "... src/noise/ImpulseNoise.o"
+	@echo "... src/noise/ImpulseNoise.i"
+	@echo "... src/noise/ImpulseNoise.s"
+	@echo "... src/noise/PeriodicNoise.o"
+	@echo "... src/noise/PeriodicNoise.i"
+	@echo "... src/noise/PeriodicNoise.s"
+	@echo "... src/noise/PinkNoise.o"
+	@echo "... src/noise/PinkNoise.i"
+	@echo "... src/noise/PinkNoise.s"
+	@echo "... src/noise/UniformNoise.o"
+	@echo "... src/noise/UniformNoise.i"
+	@echo "... src/noise/UniformNoise.s"
 	@echo "... src/runner/SensorRunner.o"
 	@echo "... src/runner/SensorRunner.i"
 	@echo "... src/runner/SensorRunner.s"

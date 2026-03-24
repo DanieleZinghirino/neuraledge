@@ -47,6 +47,11 @@ make_edge_lib(edge_signal
 
 make_edge_lib(edge_noise
     src/noise/GaussianNoise.cpp
+    src/noise/UniformNoise.cpp
+    src/noise/PinkNoise.cpp
+    src/noise/DriftNoise.cpp
+    src/noise/PeriodicNoise.cpp
+    src/noise/ImpulseNoise.cpp
 )
 
 make_edge_lib(edge_fault

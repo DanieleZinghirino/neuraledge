@@ -5,7 +5,12 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o
  /home/daniele/Work/neuraledge/edge/src/factory/SensorFactory.cpp
  /home/daniele/Work/neuraledge/edge/include/factory/SensorFactory.hpp
  /home/daniele/Work/neuraledge/edge/include/fault/SpikeFault.hpp
+ /home/daniele/Work/neuraledge/edge/include/noise/DriftNoise.hpp
  /home/daniele/Work/neuraledge/edge/include/noise/GaussianNoise.hpp
+ /home/daniele/Work/neuraledge/edge/include/noise/ImpulseNoise.hpp
+ /home/daniele/Work/neuraledge/edge/include/noise/PeriodicNoise.hpp
+ /home/daniele/Work/neuraledge/edge/include/noise/PinkNoise.hpp
+ /home/daniele/Work/neuraledge/edge/include/noise/UniformNoise.hpp
  /home/daniele/Work/neuraledge/edge/include/fault/IFaultModel.hpp
  /home/daniele/Work/neuraledge/edge/include/noise/INoiseModel.hpp
  /home/daniele/Work/neuraledge/edge/include/signal/ISignalModel.hpp
@@ -18,6 +23,7 @@ CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
+ /usr/include/c++/13/array
  /usr/include/c++/13/backward/auto_ptr.h
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bit

@@ -83,17 +83,97 @@ CMakeFiles/edge_noise.dir/src/noise/GaussianNoise.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_noise.dir/src/noise/GaussianNoise.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/noise/GaussianNoise.cpp -o CMakeFiles/edge_noise.dir/src/noise/GaussianNoise.cpp.s
 
+CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o: CMakeFiles/edge_noise.dir/flags.make
+CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o: /home/daniele/Work/neuraledge/edge/src/noise/UniformNoise.cpp
+CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o: CMakeFiles/edge_noise.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o -MF CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o.d -o CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o -c /home/daniele/Work/neuraledge/edge/src/noise/UniformNoise.cpp
+
+CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/noise/UniformNoise.cpp > CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.i
+
+CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/noise/UniformNoise.cpp -o CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.s
+
+CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o: CMakeFiles/edge_noise.dir/flags.make
+CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o: /home/daniele/Work/neuraledge/edge/src/noise/PinkNoise.cpp
+CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o: CMakeFiles/edge_noise.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o -MF CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o.d -o CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o -c /home/daniele/Work/neuraledge/edge/src/noise/PinkNoise.cpp
+
+CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/noise/PinkNoise.cpp > CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.i
+
+CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/noise/PinkNoise.cpp -o CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.s
+
+CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o: CMakeFiles/edge_noise.dir/flags.make
+CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o: /home/daniele/Work/neuraledge/edge/src/noise/DriftNoise.cpp
+CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o: CMakeFiles/edge_noise.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o -MF CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o.d -o CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o -c /home/daniele/Work/neuraledge/edge/src/noise/DriftNoise.cpp
+
+CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/noise/DriftNoise.cpp > CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.i
+
+CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/noise/DriftNoise.cpp -o CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.s
+
+CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o: CMakeFiles/edge_noise.dir/flags.make
+CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o: /home/daniele/Work/neuraledge/edge/src/noise/PeriodicNoise.cpp
+CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o: CMakeFiles/edge_noise.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o -MF CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o.d -o CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o -c /home/daniele/Work/neuraledge/edge/src/noise/PeriodicNoise.cpp
+
+CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/noise/PeriodicNoise.cpp > CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.i
+
+CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/noise/PeriodicNoise.cpp -o CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.s
+
+CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o: CMakeFiles/edge_noise.dir/flags.make
+CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o: /home/daniele/Work/neuraledge/edge/src/noise/ImpulseNoise.cpp
+CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o: CMakeFiles/edge_noise.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o -MF CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o.d -o CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o -c /home/daniele/Work/neuraledge/edge/src/noise/ImpulseNoise.cpp
+
+CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniele/Work/neuraledge/edge/src/noise/ImpulseNoise.cpp > CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.i
+
+CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniele/Work/neuraledge/edge/src/noise/ImpulseNoise.cpp -o CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.s
+
 # Object files for target edge_noise
 edge_noise_OBJECTS = \
-"CMakeFiles/edge_noise.dir/src/noise/GaussianNoise.cpp.o"
+"CMakeFiles/edge_noise.dir/src/noise/GaussianNoise.cpp.o" \
+"CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o" \
+"CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o" \
+"CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o" \
+"CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o" \
+"CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o"
 
 # External object files for target edge_noise
 edge_noise_EXTERNAL_OBJECTS =
 
 libedge_noise.a: CMakeFiles/edge_noise.dir/src/noise/GaussianNoise.cpp.o
+libedge_noise.a: CMakeFiles/edge_noise.dir/src/noise/UniformNoise.cpp.o
+libedge_noise.a: CMakeFiles/edge_noise.dir/src/noise/PinkNoise.cpp.o
+libedge_noise.a: CMakeFiles/edge_noise.dir/src/noise/DriftNoise.cpp.o
+libedge_noise.a: CMakeFiles/edge_noise.dir/src/noise/PeriodicNoise.cpp.o
+libedge_noise.a: CMakeFiles/edge_noise.dir/src/noise/ImpulseNoise.cpp.o
 libedge_noise.a: CMakeFiles/edge_noise.dir/build.make
 libedge_noise.a: CMakeFiles/edge_noise.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libedge_noise.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daniele/Work/neuraledge/edge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libedge_noise.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/edge_noise.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/edge_noise.dir/link.txt --verbose=$(VERBOSE)
 
