@@ -10,7 +10,6 @@ output/
 
 # C++ build
 edge/build/
-edge/CmakeFiles/
 *.o
 *.exe
 

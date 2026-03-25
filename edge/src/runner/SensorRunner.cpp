@@ -24,34 +24,55 @@ void SensorRunner::worker(Sensor& sensor) {
     for (std::size_t i = 0; i < total_samples; ++i) {
         auto s = sensor.read();
 
+        // =========================================================
+        // THROTTLE CONSOLE — stampa al massimo kMaxConsolePrintHz
+        // volte al secondo per sensore, indipendentemente dal
+        // sampling rate. I dati vengono sempre scritti nel CSV.
+        // =========================================================
+        const auto now = std::chrono::steady_clock::now();
+        bool should_print = false;
+
         {
+            std::lock_guard<std::mutex> lock(last_print_mtx_);
+            auto& last = last_print_[s.sensor_id];
+            const double elapsed_ms = std::chrono::duration<double, std::milli>(now - last).count();
+
+            if (elapsed_ms >= (1000.0 / kMaxConsolePrintHz)) {
+                last         = now;
+                should_print = true;
+            }
+        }
+
+        if (should_print) {
             std::lock_guard<std::mutex> lock(cout_mtx_);
 
             if (std::isnan(s.value)) {
                 std::cout << s.timestamp << " | "
                           << s.sensor_id << " | "
                           << "[DROPOUT]"
-                          << std::endl;
+                          << "\n";
             } else {
                 std::cout << s.timestamp << " | "
                           << s.sensor_id << " | "
-                          << s.value << " "
+                          << s.value     << " "
                           << s.unit
-                          << std::endl;
+                          << "\n";
             }
         }
 
+        // Log CSV — SEMPRE, nessun throttle
         const std::string value_str = std::isnan(s.value) ? "" : std::to_string(s.value);
-
         const std::string line =
             s.timestamp + "," +
             s.sensor_id + "," +
-            value_str + "," +
+            value_str   + "," +
             s.unit;
 
         logger_.log(line);
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(sleep_ms));
+        if (sleep_ms > 0) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(sleep_ms));
+        }
     }
 }
 

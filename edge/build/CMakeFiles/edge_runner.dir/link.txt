@@ -1,2 +1,0 @@
-/usr/bin/ar qc libedge_runner.a CMakeFiles/edge_runner.dir/src/runner/SensorRunner.cpp.o
-/usr/bin/ranlib libedge_runner.a

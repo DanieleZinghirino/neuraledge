@@ -1,2 +1,0 @@
-/usr/bin/ar qc libedge_factory.a CMakeFiles/edge_factory.dir/src/factory/SensorFactory.cpp.o
-/usr/bin/ranlib libedge_factory.a

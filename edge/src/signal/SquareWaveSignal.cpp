@@ -17,5 +17,5 @@ double SquareWaveSignal::generate(double t) const {
     return (phase < duty_cycle_) ? high_level_ : low_level_;
 }
 
-std::string SquareWaveSignal::typeName() const { return "sqwave";       }
+std::string SquareWaveSignal::typeName() const { return "sq";       }
 std::string SquareWaveSignal::unit()     const { return unit_str_;  }

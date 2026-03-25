@@ -21,20 +21,16 @@ PressureSignal::PressureSignal(double baseline,
       sign_dist_(0, 1) {}
 
 double PressureSignal::generate(double t) const {
-    // generate() è const ma dobbiamo modificare lo stato del transitorio.
-    // Il cast è giustificato: lo stato del transitorio è implementation detail
-    // del modello stocastico, non parte del valore logico dell'oggetto.
-    auto* self = const_cast<PressureSignal*>(this);
-
     // 1. Baseline con oscillazione lenta
     double value = baseline_ +
         slow_amplitude_ * std::sin(2.0 * M_PI * slow_freq_ * t);
 
-    // 2. Attivazione casuale di un transitorio (se non già in uno)
-    if (!in_transient_ && trigger_dist_(self->gen_) < transient_prob_) {
-        self->in_transient_     = true;
-        self->transient_start_  = t;
-        self->transient_sign_   = (sign_dist_(self->gen_) == 0) ? 1 : -1;
+    // 2. Attivazione casuale di un transitorio (se non già in uno).
+    //    I membri sono mutable — modificabili anche in un metodo const.
+    if (!in_transient_ && trigger_dist_(gen_) < transient_prob_) {
+        in_transient_    = true;
+        transient_start_ = t;
+        transient_sign_  = (sign_dist_(gen_) == 0) ? 1 : -1;
     }
 
     // 3. Applicazione del transitorio esponenziale corrente
@@ -45,13 +41,12 @@ double PressureSignal::generate(double t) const {
 
         value += transient_sign_ * transient;
 
-        // Il transitorio si considera esaurito al 99% della magnitudine
         if (transient >= transient_mag_ * 0.99) {
-            self->in_transient_ = false;
+            in_transient_ = false;
         }
     }
 
-    // 4. Clamping fisico — la pressione non può essere negativa né superare p_max
+    // 4. Clamping fisico
     return std::clamp(value, 0.0, p_max_);
 }
 

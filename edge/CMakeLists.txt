@@ -110,8 +110,8 @@ target_link_libraries(edge_factory PRIVATE
     edge_fault
 )
 
-target_link_libraries(edge_config PRIVATE
-    yaml-cpp
+target_link_libraries(edge_config PRIVATE 
+    yaml-cpp::yaml-cpp
 )
 
 # =========================
