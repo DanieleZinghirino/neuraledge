@@ -1,5 +1,6 @@
 # Python virtual environment
 analyzer/venv/
+analyzer/__pycache__/
 
 # Python cache
 __pycache__/
