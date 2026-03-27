@@ -38,6 +38,7 @@ function SensorEditor({
   schema,
   onUpdate,
   onDelete,
+  onDuplicate,
 }) {
   const signalModels = schema.signals || {};
   const noiseModels = schema.noises || {};
@@ -79,7 +80,10 @@ function SensorEditor({
     <div className="sensor-card">
       <div className="sensor-header">
         <h3>Sensore #{index + 1}</h3>
-        <button onClick={() => onDelete(index)}>Rimuovi</button>
+        <div className="sensor-header-actions">
+          <button onClick={() => onDuplicate(index)}>Duplica</button>
+          <button onClick={() => onDelete(index)}>Rimuovi</button>
+        </div>
       </div>
 
       <div className="field">
@@ -201,20 +205,31 @@ export default function App() {
   const [selectedFile, setSelectedFile] = useState("simulation.yaml");
   const [config, setConfig] = useState(null);
   const [runStatus, setRunStatus] = useState(null);
+  const [saveAsFilename, setSaveAsFilename] = useState("");
 
   useEffect(() => {
-    fetch(`${API_BASE}/schema`)
-      .then((res) => res.json())
-      .then(setSchema);
-
-    fetch(`${API_BASE}/configs`)
-      .then((res) => res.json())
-      .then(setConfigFiles);
+    refreshSchemaAndConfigs();
   }, []);
+
+  const refreshSchemaAndConfigs = async () => {
+    const schemaRes = await fetch(`${API_BASE}/schema`);
+    const schemaData = await schemaRes.json();
+    setSchema(schemaData);
+
+    const configsRes = await fetch(`${API_BASE}/configs`);
+    const configsData = await configsRes.json();
+    setConfigFiles(configsData);
+  };
 
   const loadConfig = async () => {
     const res = await fetch(`${API_BASE}/configs/${selectedFile}`);
     const data = await res.json();
+
+    if (data.error) {
+      alert(data.error);
+      return;
+    }
+
     setConfig(data);
   };
 
@@ -225,13 +240,46 @@ export default function App() {
   };
 
   const saveConfig = async () => {
+    if (!config) return;
+
     const res = await fetch(`${API_BASE}/configs/${selectedFile}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(config),
     });
+
     const data = await res.json();
     alert(data.message || data.error);
+    await refreshSchemaAndConfigs();
+  };
+
+  const saveAsConfig = async () => {
+    if (!config) return;
+    if (!saveAsFilename.trim()) {
+      alert("Inserisci un nome file per Save As");
+      return;
+    }
+
+    const filename = saveAsFilename.endsWith(".yaml")
+      ? saveAsFilename
+      : `${saveAsFilename}.yaml`;
+
+    const res = await fetch(`${API_BASE}/configs/save-as`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ filename, config }),
+    });
+
+    const data = await res.json();
+    if (data.error) {
+      alert(data.error);
+      return;
+    }
+
+    alert(data.message);
+    setSelectedFile(filename);
+    setSaveAsFilename("");
+    await refreshSchemaAndConfigs();
   };
 
   const runSimulation = async () => {
@@ -240,6 +288,7 @@ export default function App() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ config: selectedFile }),
     });
+
     const data = await res.json();
     alert(data.message || data.error);
 
@@ -254,20 +303,20 @@ export default function App() {
     }, 1000);
   };
 
+  const buildDefaults = (modelMap, key) => {
+    const params = {};
+    if (modelMap[key]) {
+      modelMap[key].params.forEach((p) => {
+        params[p.name] = p.default;
+      });
+    }
+    return { model: key, params };
+  };
+
   const addSensor = () => {
     const firstSignalKey = Object.keys(schema.signals)[0] || "";
     const firstNoiseKey = Object.keys(schema.noises)[0] || "gaussian";
     const firstFaultKey = Object.keys(schema.faults)[0] || "none";
-
-    const buildDefaults = (modelMap, key) => {
-      const params = {};
-      if (modelMap[key]) {
-        modelMap[key].params.forEach((p) => {
-          params[p.name] = p.default;
-        });
-      }
-      return { model: key, params };
-    };
 
     const newSensor = {
       id: `sensor_${config.sensors.length + 1}`,
@@ -293,6 +342,18 @@ export default function App() {
   const deleteSensor = (index) => {
     const nextSensors = [...config.sensors];
     nextSensors.splice(index, 1);
+    setConfig({ ...config, sensors: nextSensors });
+  };
+
+  const duplicateSensor = (index) => {
+    const source = config.sensors[index];
+    const duplicated = structuredClone(source);
+
+    duplicated.id = `${source.id}_copy`;
+
+    const nextSensors = [...config.sensors];
+    nextSensors.splice(index + 1, 0, duplicated);
+
     setConfig({ ...config, sensors: nextSensors });
   };
 
@@ -379,6 +440,18 @@ export default function App() {
             <button onClick={runSimulation}>Run Simulation</button>
           </div>
 
+          <div className="save-as-box">
+            <h2>Save As</h2>
+            <div className="save-as-row">
+              <input
+                placeholder="es. prova_gui.yaml"
+                value={saveAsFilename}
+                onChange={(e) => setSaveAsFilename(e.target.value)}
+              />
+              <button onClick={saveAsConfig}>Save As</button>
+            </div>
+          </div>
+
           <div className="sensor-list">
             {config.sensors.map((sensor, index) => (
               <SensorEditor
@@ -388,6 +461,7 @@ export default function App() {
                 schema={schema}
                 onUpdate={updateSensor}
                 onDelete={deleteSensor}
+                onDuplicate={duplicateSensor}
               />
             ))}
           </div>

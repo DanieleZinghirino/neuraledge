@@ -28,7 +28,18 @@ def list_yaml_files():
     return sorted([p.name for p in CONFIG_DIR.glob("*.yaml")])
 
 
+def validate_filename(filename: str):
+    if not filename.endswith(".yaml"):
+        raise ValueError("Filename must end with .yaml")
+    if "/" in filename or "\\" in filename:
+        raise ValueError("Filename must not contain path separators")
+    if filename.strip() == "":
+        raise ValueError("Filename cannot be empty")
+
+
 def load_yaml_file(filename: str):
+    validate_filename(filename)
+
     path = CONFIG_DIR / filename
     if not path.exists():
         raise FileNotFoundError(f"Config file not found: {filename}")
@@ -43,6 +54,8 @@ def load_yaml_file(filename: str):
 
 
 def save_yaml_file(filename: str, data):
+    validate_filename(filename)
+
     path = CONFIG_DIR / filename
     path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -130,6 +143,30 @@ def put_config(filename):
 
         save_yaml_file(filename, data)
         return jsonify({"message": f"{filename} saved successfully"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/configs/save-as", methods=["POST"])
+def save_as_config():
+    try:
+        data = request.get_json()
+        if data is None:
+            return jsonify({"error": "Missing JSON body"}), 400
+
+        filename = data.get("filename")
+        config = data.get("config")
+
+        if filename is None or config is None:
+            return jsonify({"error": "Both 'filename' and 'config' are required"}), 400
+
+        validate_filename(filename)
+
+        save_yaml_file(filename, config)
+        return jsonify({
+            "message": f"{filename} saved successfully",
+            "filename": filename
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
