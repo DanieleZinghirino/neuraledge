@@ -3,7 +3,7 @@ import subprocess
 import threading
 
 import yaml
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 
 from model_schema import SIGNAL_MODELS, NOISE_MODELS, FAULT_MODELS
@@ -14,6 +14,7 @@ CORS(app)
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_DIR = REPO_ROOT / "edge" / "config"
 RUN_SCRIPT = REPO_ROOT / "run.sh"
+PLOTS_DIR = REPO_ROOT / "output" / "plots"
 
 run_state = {
     "status": "idle",   # idle | running | completed | failed
@@ -72,6 +73,12 @@ def build_default_config():
         },
         "sensors": [],
     }
+
+
+def list_plot_files():
+    if not PLOTS_DIR.exists():
+        return []
+    return sorted([p.name for p in PLOTS_DIR.glob("*.png")])
 
 
 def run_pipeline_in_background(config_filename: str):
@@ -205,6 +212,16 @@ def run_config():
 @app.route("/api/run/status", methods=["GET"])
 def get_run_status():
     return jsonify(run_state)
+
+
+@app.route("/api/plots", methods=["GET"])
+def get_plots():
+    return jsonify(list_plot_files())
+
+
+@app.route("/api/plots/<filename>", methods=["GET"])
+def serve_plot(filename):
+    return send_from_directory(PLOTS_DIR, filename)
 
 
 if __name__ == "__main__":

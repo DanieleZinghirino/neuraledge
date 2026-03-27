@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import loadingGif from "./assets/loading.gif";
 
 const API_BASE = "http://127.0.0.1:5000/api";
 
@@ -48,6 +49,24 @@ function SensorEditor({
     onUpdate(index, { ...sensor, [field]: value });
   };
 
+  const buildDefaults = (modelMap, key) => {
+    const params = {};
+    if (modelMap[key]) {
+      modelMap[key].params.forEach((p) => {
+        params[p.name] = p.default;
+      });
+    }
+    return { model: key, params };
+  };
+
+  const updateSensorType = (selectedType) => {
+    onUpdate(index, {
+      ...sensor,
+      type: selectedType,
+      signal: buildDefaults(signalModels, selectedType),
+    });
+  };
+
   const updateModelName = (section, modelName, modelSchema) => {
     const defaults = {};
     modelSchema[modelName].params.forEach((p) => {
@@ -95,14 +114,10 @@ function SensorEditor({
       </div>
 
       <div className="field">
-        <label>Tipo segnale</label>
+        <label>Tipo sensore</label>
         <select
           value={sensor.type}
-          onChange={(e) => {
-            const selected = e.target.value;
-            updateField("type", selected);
-            updateModelName("signal", selected, signalModels);
-          }}
+          onChange={(e) => updateSensorType(e.target.value)}
         >
           <option value="">-- seleziona --</option>
           {Object.entries(signalModels).map(([key, value]) => (
@@ -124,22 +139,10 @@ function SensorEditor({
       </div>
 
       <h4>Signal</h4>
-      <div className="field">
-        <label>Signal model</label>
-        <select
-          value={sensor.signal.model}
-          onChange={(e) =>
-            updateModelName("signal", e.target.value, signalModels)
-          }
-        >
-          <option value="">-- seleziona --</option>
-          {Object.entries(signalModels).map(([key, value]) => (
-            <option key={key} value={key}>
-              {value.label}
-            </option>
-          ))}
-        </select>
-      </div>
+      <p className="auto-field">
+        Il segnale è impostato automaticamente su:{" "}
+        <strong>{sensor.signal.model || "non selezionato"}</strong>
+      </p>
 
       <ParamInputs
         modelName={sensor.signal.model}
@@ -199,6 +202,63 @@ function SensorEditor({
   );
 }
 
+function LoadingOverlay({ progress }) {
+  return (
+    <div className="loading-overlay">
+      <div className="loading-card">
+        <h2>Simulazione in esecuzione...</h2>
+
+        <img
+          src={loadingGif}
+          alt="Loading..."
+          className="loading-gif"
+        />
+
+        <div className="progress-bar">
+          <div
+            className="progress-bar-fill"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
+        <p>{progress}%</p>
+
+        <p className="loading-subtext">
+          Simulazione in corso...
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function PlotModal({ imageUrl, title, zoom, onZoomIn, onZoomOut, onClose }) {
+  if (!imageUrl) return null;
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content large" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-header">
+          <h2>{title}</h2>
+          <div className="modal-actions">
+            <button onClick={onZoomOut}>-</button>
+            <button onClick={onZoomIn}>+</button>
+            <button onClick={onClose}>Chiudi</button>
+          </div>
+        </div>
+
+        <div className="modal-image-container">
+          <img
+            src={imageUrl}
+            alt={title}
+            className="modal-image"
+            style={{ transform: `scale(${zoom})` }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [schema, setSchema] = useState({ signals: {}, noises: {}, faults: {} });
   const [configFiles, setConfigFiles] = useState([]);
@@ -206,6 +266,11 @@ export default function App() {
   const [config, setConfig] = useState(null);
   const [runStatus, setRunStatus] = useState(null);
   const [saveAsFilename, setSaveAsFilename] = useState("");
+  const [isRunning, setIsRunning] = useState(false);
+  const [fakeProgress, setFakeProgress] = useState(0);
+  const [plots, setPlots] = useState([]);
+  const [selectedPlot, setSelectedPlot] = useState(null);
+  const [plotZoom, setPlotZoom] = useState(1);
 
   useEffect(() => {
     refreshSchemaAndConfigs();
@@ -219,6 +284,12 @@ export default function App() {
     const configsRes = await fetch(`${API_BASE}/configs`);
     const configsData = await configsRes.json();
     setConfigFiles(configsData);
+  };
+
+  const fetchPlots = async () => {
+    const res = await fetch(`${API_BASE}/plots`);
+    const data = await res.json();
+    setPlots(data);
   };
 
   const loadConfig = async () => {
@@ -283,6 +354,11 @@ export default function App() {
   };
 
   const runSimulation = async () => {
+    setPlots([]);
+    setRunStatus(null);
+    setIsRunning(true);
+    setFakeProgress(5);
+
     const res = await fetch(`${API_BASE}/run`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -290,15 +366,38 @@ export default function App() {
     });
 
     const data = await res.json();
-    alert(data.message || data.error);
 
-    const interval = setInterval(async () => {
+    if (data.error) {
+      alert(data.error);
+      setIsRunning(false);
+      setFakeProgress(0);
+      return;
+    }
+
+    const progressInterval = setInterval(() => {
+      setFakeProgress((prev) => {
+        if (prev >= 90) return 90;
+        return prev + 5;
+      });
+    }, 700);
+
+    const statusInterval = setInterval(async () => {
       const statusRes = await fetch(`${API_BASE}/run/status`);
       const statusData = await statusRes.json();
       setRunStatus(statusData);
 
       if (statusData.status !== "running") {
-        clearInterval(interval);
+        clearInterval(statusInterval);
+        clearInterval(progressInterval);
+        setFakeProgress(100);
+        setTimeout(() => {
+          setIsRunning(false);
+          setFakeProgress(0);
+        }, 500);
+
+        if (statusData.status === "completed") {
+          await fetchPlots();
+        }
       }
     }, 1000);
   };
@@ -348,13 +447,22 @@ export default function App() {
   const duplicateSensor = (index) => {
     const source = config.sensors[index];
     const duplicated = structuredClone(source);
-
     duplicated.id = `${source.id}_copy`;
 
     const nextSensors = [...config.sensors];
     nextSensors.splice(index + 1, 0, duplicated);
 
     setConfig({ ...config, sensors: nextSensors });
+  };
+
+  const openPlot = (plotName) => {
+    setSelectedPlot(plotName);
+    setPlotZoom(1);
+  };
+
+  const closePlot = () => {
+    setSelectedPlot(null);
+    setPlotZoom(1);
   };
 
   return (
@@ -440,18 +548,6 @@ export default function App() {
             <button onClick={runSimulation}>Run Simulation</button>
           </div>
 
-          <div className="save-as-box">
-            <h2>Save As</h2>
-            <div className="save-as-row">
-              <input
-                placeholder="es. prova_gui.yaml"
-                value={saveAsFilename}
-                onChange={(e) => setSaveAsFilename(e.target.value)}
-              />
-              <button onClick={saveAsConfig}>Save As</button>
-            </div>
-          </div>
-
           <div className="sensor-list">
             {config.sensors.map((sensor, index) => (
               <SensorEditor
@@ -465,10 +561,22 @@ export default function App() {
               />
             ))}
           </div>
+
+          <div className="save-as-box">
+            <h2>Save As</h2>
+            <div className="save-as-row">
+              <input
+                placeholder="es. prova_gui.yaml"
+                value={saveAsFilename}
+                onChange={(e) => setSaveAsFilename(e.target.value)}
+              />
+              <button onClick={saveAsConfig}>Save As</button>
+            </div>
+          </div>
         </>
       )}
 
-      {runStatus && (
+      {runStatus && !isRunning && (
         <div className="run-status">
           <h2>Run Status</h2>
           <p><strong>Status:</strong> {runStatus.status}</p>
@@ -477,6 +585,35 @@ export default function App() {
           <pre>{runStatus.logs}</pre>
         </div>
       )}
+
+      {plots.length > 0 && (
+        <div className="plots-section">
+          <h2>Grafici generati</h2>
+          <div className="plots-grid">
+            {plots.map((plot) => (
+              <div key={plot} className="plot-card" onClick={() => openPlot(plot)}>
+                <img
+                  src={`${API_BASE}/plots/${plot}`}
+                  alt={plot}
+                  className="plot-thumb"
+                />
+                <p>{plot}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {isRunning && <LoadingOverlay progress={fakeProgress} />}
+
+      <PlotModal
+        imageUrl={selectedPlot ? `${API_BASE}/plots/${selectedPlot}` : null}
+        title={selectedPlot}
+        zoom={plotZoom}
+        onZoomIn={() => setPlotZoom((z) => z + 0.2)}
+        onZoomOut={() => setPlotZoom((z) => Math.max(0.4, z - 0.2))}
+        onClose={closePlot}
+      />
     </div>
   );
 }

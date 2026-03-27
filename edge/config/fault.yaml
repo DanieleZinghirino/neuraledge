@@ -1,0 +1,160 @@
+sensors:
+- id: sensor_1
+  type: temperature
+  sampling_rate: 1
+  signal:
+    model: temperature
+    params:
+      base: 25
+      tau: 100
+      slow_amp: 1
+      slow_freq: 0.001
+      fast_amp: 0.05
+      fast_freq: 0.03
+  noise:
+    model: drift
+    params:
+      step_sigma: 0.001
+      max_drift: 0.1
+  fault:
+    model: none
+    params: {}
+- id: sensor_2
+  type: temperature
+  sampling_rate: 1
+  signal:
+    model: temperature
+    params:
+      base: 25
+      tau: 100
+      slow_amp: 1
+      slow_freq: 0.002
+      fast_amp: 0.05
+      fast_freq: 0.03
+  noise:
+    model: drift
+    params:
+      step_sigma: 0.001
+      max_drift: 0.1
+  fault:
+    model: none
+    params: {}
+- id: sensor_3
+  type: temperature
+  sampling_rate: 1
+  signal:
+    model: temperature
+    params:
+      base: 25
+      tau: 100
+      slow_amp: 1
+      slow_freq: 0.002
+      fast_amp: 0.05
+      fast_freq: 0.03
+  noise:
+    model: gaussian
+    params:
+      sigma: 0.05
+  fault:
+    model: none
+    params: {}
+- id: sensor_4
+  type: temperature
+  sampling_rate: 1
+  signal:
+    model: temperature
+    params:
+      base: 25
+      tau: 100
+      slow_amp: 1
+      slow_freq: 0.002
+      fast_amp: 0.05
+      fast_freq: 0.03
+  noise:
+    model: gaussian
+    params:
+      sigma: 0.05
+  fault:
+    model: spike
+    params:
+      probability: 0.01
+      magnitude: 1
+- id: sensor_5
+  type: current
+  sampling_rate: 1
+  signal:
+    model: current
+    params:
+      base: 1
+      fundamental: 2.5
+      freq: 50
+      thd3_amp: 0.15
+      thd3_phase: 0.1
+      thd5_amp: 0.05
+      thd5_phase: 0.2
+      load_period: 10
+      delta_i: 1
+      tau_load: 1
+  noise:
+    model: impulse
+    params:
+      probability: 0.005
+      impulse_sigma: 0.08
+  fault:
+    model: none
+    params: {}
+- id: sensor_6
+  type: current
+  sampling_rate: 1
+  signal:
+    model: current
+    params:
+      base: 1
+      fundamental: 2.5
+      freq: 50
+      thd3_amp: 0.15
+      thd3_phase: 0.1
+      thd5_amp: 0.05
+      thd5_phase: 0.2
+      load_period: 10
+      delta_i: 1
+      tau_load: 1
+  noise:
+    model: impulse
+    params:
+      probability: 0.005
+      impulse_sigma: 0.08
+  fault:
+    model: stuck
+    params:
+      stuck_prob: 0.003
+- id: sensor_7
+  type: current
+  sampling_rate: 1
+  signal:
+    model: current
+    params:
+      base: 1
+      fundamental: 2.5
+      freq: 50
+      thd3_amp: 0.15
+      thd3_phase: 0.1
+      thd5_amp: -0.9
+      thd5_phase: 0.2
+      load_period: 10
+      delta_i: 1
+      tau_load: 1
+  noise:
+    model: impulse
+    params:
+      probability: 0.01
+      impulse_sigma: 0.08
+  fault:
+    model: spike
+    params:
+      probability: -0.995
+      magnitude: 2
+simulation:
+  duration_seconds: 120
+  output_csv: ../../output/sensor_data.csv
+  seed: 43
