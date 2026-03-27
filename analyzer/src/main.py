@@ -2,6 +2,7 @@ from pathlib import Path
 import sys
 import yaml
 
+from sensor_meta import load_sensor_meta
 from csv_loader import load_csv
 from timeseries import pivot_timeseries, compute_derivative, compute_stats
 from plots import plot_per_sensor
@@ -149,7 +150,8 @@ def main():
     # 6. Plot
     # =========================
     try:
-        plot_per_sensor(df)
+        meta = load_sensor_meta(config_path)
+        plot_per_sensor(df, meta = meta)
     except Exception as e:
         print(f"[ERROR] Errore nei plot: {e}")
         sys.exit(1)
